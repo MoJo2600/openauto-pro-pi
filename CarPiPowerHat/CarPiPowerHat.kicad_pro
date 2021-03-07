@@ -58,7 +58,7 @@
       "drc_exclusions": [],
       "meta": {
         "filename": "board_design_settings.json",
-        "version": 1
+        "version": 2
       },
       "rule_severities": {
         "annular_width": "error",
@@ -112,11 +112,7 @@
         "min_through_hole_diameter": 0.19999999999999998,
         "min_track_width": 0.15,
         "min_via_annular_width": 0.049999999999999996,
-        "min_via_diameter": 0.39999999999999997,
-        "solder_mask_clearance": 0.09999999999999999,
-        "solder_mask_min_width": 0.0,
-        "solder_paste_clearance": 0.0,
-        "solder_paste_margin_ratio": -0.0
+        "min_via_diameter": 0.39999999999999997
       },
       "track_widths": [
         0.0,
@@ -431,7 +427,7 @@
   },
   "sheets": [
     [
-      "09f54aa4-cb68-4cc9-8872-8362bd2b4112",
+      "2a909e91-3f8b-44b0-a850-8790d241119a",
       ""
     ]
   ],

@@ -1,3 +1,4 @@
 (sym_lib_table
-  (lib (name "raspberrypi_hat")(type "KiCad")(uri "${KIPRJMOD}/raspberrypi_hat.kicad_sym")(options "")(descr ""))
+  (lib (name "raspberrypi_hat")(type "KiCad")(uri "${KIPRJMOD}/CarPiPowerHat.kicad_sym")(options "")(descr ""))
+  (lib (name "atmel")(type "KiCad")(uri "${KIPRJMOD}/project_footprints.pretty/MCU_Microchip_ATtiny.lib")(options "")(descr ""))
 )
