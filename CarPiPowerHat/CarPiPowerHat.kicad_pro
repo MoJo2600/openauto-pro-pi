@@ -404,6 +404,7 @@
       "default_text_size": 50.0,
       "default_wire_thickness": 6.0,
       "field_names": [],
+      "intersheets_ref_own_page": false,
       "intersheets_ref_prefix": "",
       "intersheets_ref_short": false,
       "intersheets_ref_show": false,
@@ -427,8 +428,28 @@
   },
   "sheets": [
     [
-      "2a909e91-3f8b-44b0-a850-8790d241119a",
+      "1fcb31a2-51e4-4be3-8124-9d26e186cfb4",
       ""
+    ],
+    [
+      "1fcb31a2-51e4-4be3-8124-9d26e186cfb4",
+      "HDMI Connectors"
+    ],
+    [
+      "d7dab0b1-a885-42c4-b558-97d79e73318c",
+      "PSU"
+    ],
+    [
+      "c779e344-5031-4f2d-bf31-77741b3c4be9",
+      "Power Control"
+    ],
+    [
+      "24bd5701-0eb0-4ec6-b68f-934ea2fa56bc",
+      "Reverse Input"
+    ],
+    [
+      "c96310d5-5754-4cd6-8de7-7840ff32f085",
+      "Light Input"
     ]
   ],
   "text_variables": {}

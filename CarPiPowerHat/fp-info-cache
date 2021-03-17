@@ -1,4 +1,4 @@
-19082531901708392
+19085763874429744
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -83026,6 +83026,20 @@ varistor SIOV
 0
 2
 2
+project_footprints
+EDAC 690-019-298-412
+
+
+0
+23
+23
+project_footprints
+Hirose_FH12-22S-0.5SH_1x22-1MP_P0.50mm_Horizontal
+Molex FH12, FFC/FPC connector, FH12-22S-0.5SH, 22 Pins per row (https://www.hirose.com/product/en/products/FH12/FH12-24S-0.5SH(55)/), generated with kicad-footprint-generator
+connector Hirose  top entry
+0
+24
+23
 project_footprints
 NPTH_3mm_ID
 
