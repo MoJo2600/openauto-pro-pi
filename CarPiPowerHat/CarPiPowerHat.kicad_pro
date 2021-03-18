@@ -433,7 +433,7 @@
     ],
     [
       "1fcb31a2-51e4-4be3-8124-9d26e186cfb4",
-      "HDMI Connectors"
+      "HDMI Connector Camera"
     ],
     [
       "d7dab0b1-a885-42c4-b558-97d79e73318c",
@@ -446,6 +446,10 @@
     [
       "24bd5701-0eb0-4ec6-b68f-934ea2fa56bc",
       "Reverse Input"
+    ],
+    [
+      "696a3b6b-1b33-4b36-bded-7b3fb05e770a",
+      "HDMI Connector Display"
     ],
     [
       "c96310d5-5754-4cd6-8de7-7840ff32f085",
