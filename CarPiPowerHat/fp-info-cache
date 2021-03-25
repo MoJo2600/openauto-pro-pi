@@ -1,4 +1,4 @@
-19088995985264820
+19093844829285846
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -83055,9 +83055,30 @@ connector Hirose  top entry
 24
 23
 project_footprints
+MountingHole_2.7mm_M2.5
+Mounting Hole 2.7mm, no annular, M2.5
+mounting hole 2.7mm no annular m2.5
+0
+0
+0
+project_footprints
 NPTH_3mm_ID
 
 
 0
 0
 0
+project_footprints
+R_0603_1608Metric_Pad0.84x1.00mm_HandSolder
+
+
+0
+2
+2
+project_footprints
+SOT26
+
+
+0
+6
+6

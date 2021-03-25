@@ -2,7 +2,7 @@
   "board": {
     "active_layer": 0,
     "active_layer_preset": "",
-    "auto_track_width": true,
+    "auto_track_width": false,
     "hidden_nets": [],
     "high_contrast_mode": 0,
     "net_color_mode": 1,
@@ -33,6 +33,9 @@
       3,
       4,
       5,
+      6,
+      7,
+      8,
       9,
       10,
       11,
@@ -41,7 +44,6 @@
       14,
       15,
       16,
-      17,
       18,
       19,
       20,
@@ -51,16 +53,18 @@
       24,
       25,
       26,
+      27,
+      28,
+      29,
+      30,
       32,
       33,
       34,
       35,
-      36,
-      37,
-      38
+      36
     ],
-    "visible_layers": "00313ef_80000007",
-    "zone_display_mode": 0
+    "visible_layers": "ffff1fd_fffffff9",
+    "zone_display_mode": 1
   },
   "meta": {
     "filename": "CarPiPowerHat.kicad_prl",

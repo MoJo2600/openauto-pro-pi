@@ -33,9 +33,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 0.762,
-          "height": 1.524,
-          "width": 1.524
+          "drill": 0.0,
+          "height": 2.0,
+          "width": 0.61
         },
         "silk_line_width": 0.15,
         "silk_text_italic": false,
@@ -44,8 +44,8 @@
         "silk_text_thickness": 0.09,
         "silk_text_upright": false,
         "zones": {
-          "45_degree_only": true,
-          "min_clearance": 0.19999999999999998
+          "45_degree_only": false,
+          "min_clearance": 0.39999999999999997
         }
       },
       "diff_pair_dimensions": [
@@ -123,7 +123,8 @@
         0.5,
         0.6,
         1.0,
-        2.0
+        2.0,
+        3.0
       ],
       "via_dimensions": [
         {
@@ -378,6 +379,95 @@
         "via_diameter": 0.4,
         "via_drill": 0.2,
         "wire_width": 6.0
+      },
+      {
+        "bus_width": 12.0,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "12V",
+        "nets": [
+          "/+12v",
+          "/PSU/P12V"
+        ],
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 2.0,
+        "via_diameter": 0.4,
+        "via_drill": 0.2,
+        "wire_width": 6.0
+      },
+      {
+        "bus_width": 12.0,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "5V",
+        "nets": [
+          "/P5V_HAT",
+          "/PSU/P5V"
+        ],
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 3.0,
+        "via_diameter": 0.4,
+        "via_drill": 0.2,
+        "wire_width": 6.0
+      },
+      {
+        "bus_width": 12.0,
+        "clearance": 0.1016,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "CSI",
+        "nets": [
+          "/HDMI Connector Camera/A",
+          "/HDMI Connector Camera/B",
+          "/HDMI Connector Camera/C",
+          "/HDMI Connector Camera/CEC",
+          "/HDMI Connector Camera/CK+",
+          "/HDMI Connector Camera/CK-",
+          "/HDMI Connector Camera/C_SCL",
+          "/HDMI Connector Camera/D",
+          "/HDMI Connector Camera/D0+",
+          "/HDMI Connector Camera/D0-",
+          "/HDMI Connector Camera/D1+",
+          "/HDMI Connector Camera/D1-",
+          "/HDMI Connector Camera/D2+",
+          "/HDMI Connector Camera/D2-",
+          "/HDMI Connector Camera/UTILITY{slash}HEAC+",
+          "/HDMI Connector Display/C",
+          "/HDMI Connector Display/CEC",
+          "/HDMI Connector Display/CK+",
+          "/HDMI Connector Display/CK-",
+          "/HDMI Connector Display/C_SCL",
+          "/HDMI Connector Display/D",
+          "/HDMI Connector Display/D0+",
+          "/HDMI Connector Display/D0-",
+          "/HDMI Connector Display/D1+",
+          "/HDMI Connector Display/D1-",
+          "/HDMI Connector Display/D2+",
+          "/HDMI Connector Display/D2-",
+          "/HDMI Connector Display/UTILITY{slash}HEAC+"
+        ],
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.125984,
+        "via_diameter": 0.4,
+        "via_drill": 0.2,
+        "wire_width": 6.0
       }
     ],
     "meta": {
@@ -448,12 +538,20 @@
       "Reverse Input"
     ],
     [
-      "696a3b6b-1b33-4b36-bded-7b3fb05e770a",
-      "HDMI Connector Display"
+      "f1426ddb-6257-479f-8e44-f1c73b1b9fa1",
+      "RTC Clock"
+    ],
+    [
+      "7f3ba05c-fc58-41f8-952b-1e25e8824711",
+      "i2s_dac"
     ],
     [
       "c96310d5-5754-4cd6-8de7-7840ff32f085",
       "Light Input"
+    ],
+    [
+      "696a3b6b-1b33-4b36-bded-7b3fb05e770a",
+      "HDMI Connector Display"
     ]
   ],
   "text_variables": {}
