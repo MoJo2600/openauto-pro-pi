@@ -360,7 +360,6 @@
     )
   )
 
-
   (junction (at 75.565 50.8) (diameter 1.016) (color 0 0 0 0))
   (junction (at 75.565 58.42) (diameter 1.016) (color 0 0 0 0))
   (junction (at 75.565 66.04) (diameter 1.016) (color 0 0 0 0))
