@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP AP2331TDSA-7
+D Power Switch ICs - Power Distribution USB Power Switch
+K
+F https://www.diodes.com/assets/Datasheets/AP2331TD.pdf
+$ENDCMP
+#
+#End Doc Library

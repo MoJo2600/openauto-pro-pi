@@ -459,7 +459,7 @@
     (property "Value" "D_TVS" (id 1) (at 140.97 87.63 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Footprint" "" (id 2) (at 138.43 86.36 0)
+    (property "Footprint" "Diode_SMD:D_0603_1608Metric" (id 2) (at 138.43 86.36 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 138.43 86.36 0)

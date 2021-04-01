@@ -45,7 +45,7 @@
         "silk_text_upright": false,
         "zones": {
           "45_degree_only": false,
-          "min_clearance": 0.01
+          "min_clearance": 0.39999999999999997
         }
       },
       "diff_pair_dimensions": [
@@ -116,12 +116,13 @@
       },
       "track_widths": [
         0.0,
-        0.15,
+        0.127,
+        0.13,
+        0.147,
         0.2,
+        0.23,
         0.25,
-        0.4,
         0.5,
-        0.6,
         1.0,
         2.0,
         3.0
@@ -134,18 +135,10 @@
         {
           "diameter": 0.45,
           "drill": 0.25
-        },
-        {
-          "diameter": 0.6,
-          "drill": 0.3
-        },
-        {
-          "diameter": 0.8,
-          "drill": 0.4
         }
       ],
       "zones_allow_external_fillets": false,
-      "zones_use_no_outline": false
+      "zones_use_no_outline": true
     },
     "layer_presets": []
   },
@@ -389,7 +382,7 @@
         "clearance": 0.13,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.18,
+        "diff_pair_width": 0.13,
         "line_style": 0,
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
@@ -397,7 +390,54 @@
         "nets": [],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.175006,
+        "track_width": 0.127,
+        "via_diameter": 0.45,
+        "via_drill": 0.25,
+        "wire_width": 6.0
+      },
+      {
+        "bus_width": 12.0,
+        "clearance": 0.13,
+        "diff_pair_gap": 0.127,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.206,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "100RJLCPCB",
+        "nets": [
+          "/HDMI Connector Camera/A",
+          "/HDMI Connector Camera/B",
+          "/HDMI Connector Camera/C",
+          "/HDMI Connector Camera/CEC",
+          "/HDMI Connector Camera/CK+",
+          "/HDMI Connector Camera/CK-",
+          "/HDMI Connector Camera/C_SCL",
+          "/HDMI Connector Camera/D",
+          "/HDMI Connector Camera/D0+",
+          "/HDMI Connector Camera/D0-",
+          "/HDMI Connector Camera/D1+",
+          "/HDMI Connector Camera/D1-",
+          "/HDMI Connector Camera/D2+",
+          "/HDMI Connector Camera/D2-",
+          "/HDMI Connector Camera/UTILITY{slash}HEAC+",
+          "/HDMI Connector Display/C",
+          "/HDMI Connector Display/CEC",
+          "/HDMI Connector Display/CK+",
+          "/HDMI Connector Display/CK-",
+          "/HDMI Connector Display/C_SCL",
+          "/HDMI Connector Display/D",
+          "/HDMI Connector Display/D0+",
+          "/HDMI Connector Display/D0-",
+          "/HDMI Connector Display/D1+",
+          "/HDMI Connector Display/D1-",
+          "/HDMI Connector Display/D2+",
+          "/HDMI Connector Display/D2-",
+          "/HDMI Connector Display/UTILITY{slash}HEAC+"
+        ],
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.206,
         "via_diameter": 0.45,
         "via_drill": 0.25,
         "wire_width": 6.0
@@ -434,7 +474,6 @@
         "microvia_drill": 0.1,
         "name": "5V",
         "nets": [
-          "/P5V_HAT",
           "/PSU/P5V"
         ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
@@ -454,36 +493,7 @@
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
         "name": "90R",
-        "nets": [
-          "/HDMI Connector Camera/A",
-          "/HDMI Connector Camera/B",
-          "/HDMI Connector Camera/C",
-          "/HDMI Connector Camera/CEC",
-          "/HDMI Connector Camera/CK+",
-          "/HDMI Connector Camera/CK-",
-          "/HDMI Connector Camera/C_SCL",
-          "/HDMI Connector Camera/D",
-          "/HDMI Connector Camera/D0+",
-          "/HDMI Connector Camera/D0-",
-          "/HDMI Connector Camera/D1+",
-          "/HDMI Connector Camera/D1-",
-          "/HDMI Connector Camera/D2+",
-          "/HDMI Connector Camera/D2-",
-          "/HDMI Connector Camera/UTILITY{slash}HEAC+",
-          "/HDMI Connector Display/C",
-          "/HDMI Connector Display/CEC",
-          "/HDMI Connector Display/CK+",
-          "/HDMI Connector Display/CK-",
-          "/HDMI Connector Display/C_SCL",
-          "/HDMI Connector Display/D",
-          "/HDMI Connector Display/D0+",
-          "/HDMI Connector Display/D0-",
-          "/HDMI Connector Display/D1+",
-          "/HDMI Connector Display/D1-",
-          "/HDMI Connector Display/D2+",
-          "/HDMI Connector Display/D2-",
-          "/HDMI Connector Display/UTILITY{slash}HEAC+"
-        ],
+        "nets": [],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.2286,
@@ -572,6 +582,10 @@
     [
       "7f3ba05c-fc58-41f8-952b-1e25e8824711",
       "i2s_dac"
+    ],
+    [
+      "155de7fc-6b88-42c8-ad2d-41bfbd00c697",
+      "Raspberry Pi"
     ],
     [
       "c96310d5-5754-4cd6-8de7-7840ff32f085",
