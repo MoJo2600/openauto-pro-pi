@@ -1915,8 +1915,8 @@
     (path "/155de7fc-6b88-42c8-ad2d-41bfbd00c697/0cc61fd7-73c0-4048-8341-3c7181823695"
       (reference "J3") (unit 1) (value "40HAT") (footprint "Connector_PinSocket_2.54mm:PinSocket_2x20_P2.54mm_Vertical")
     )
-    (path "/155de7fc-6b88-42c8-ad2d-41bfbd00c697/54adec2a-4bb6-45ec-ac03-6e09aee783eb"
-      (reference "R2") (unit 1) (value "DNP") (footprint "project_footprints:R_0603_1608Metric_Pad0.84x1.00mm_HandSolder")
+    (path "/155de7fc-6b88-42c8-ad2d-41bfbd00c697/e298d222-0c46-452f-958d-a44df11c6ee9"
+      (reference "JP1") (unit 1) (value "SolderJumper_2_Open") (footprint "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm")
     )
     (path "/155de7fc-6b88-42c8-ad2d-41bfbd00c697/5889ef4f-0d2a-438c-8b7d-4c0039ba5a46"
       (reference "R3") (unit 1) (value "10K") (footprint "Resistor_SMD:R_0603_1608Metric")
