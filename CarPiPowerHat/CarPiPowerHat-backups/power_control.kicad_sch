@@ -540,7 +540,6 @@
     )
   )
 
-
   (junction (at 41.91 43.815) (diameter 1.016) (color 0 0 0 0))
   (junction (at 55.245 43.815) (diameter 1.016) (color 0 0 0 0))
   (junction (at 55.245 57.785) (diameter 1.016) (color 0 0 0 0))
@@ -879,6 +878,10 @@
     (uuid b998dd91-ccf5-4ef2-bdb4-65471056d813)
   )
 
+  (label "IGN" (at 51.435 43.815 180)
+    (effects (font (size 1.27 1.27)) (justify right bottom))
+    (uuid d3de2270-a0e6-4d71-8a84-199afd9ca331)
+  )
   (label "VO" (at 86.36 43.815 180)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid efd270df-a748-4d79-bf2e-91329ea8186a)
@@ -896,7 +899,7 @@
     )
   )
 
-  (hierarchical_label "+5v" (shape input) (at 26.67 31.115 180)
+  (hierarchical_label "P5V_HAT" (shape input) (at 26.67 31.115 180)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid 11e846b3-c37a-4c6a-8143-acc8f763637f)
   )

@@ -33,9 +33,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 0.9,
-          "height": 3.3,
-          "width": 1.5
+          "drill": 0.0,
+          "height": 2.0,
+          "width": 0.61
         },
         "silk_line_width": 0.12,
         "silk_text_italic": false,
@@ -45,7 +45,7 @@
         "silk_text_upright": false,
         "zones": {
           "45_degree_only": false,
-          "min_clearance": 0.01
+          "min_clearance": 9.999999999999999e-05
         }
       },
       "diff_pair_dimensions": [
@@ -55,15 +55,7 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [
-        "courtyards_overlap|122000000|101620000|01938ae5-713d-4f3a-8eb5-6b0d67d103cf|4a0520e4-2df1-433e-b984-99b39082b2d9",
-        "courtyards_overlap|122000000|99870000|01938ae5-713d-4f3a-8eb5-6b0d67d103cf|e9dd2d8f-cc97-492e-9f4e-fd18b30ec4a6",
-        "courtyards_overlap|125531784|99870001|01938ae5-713d-4f3a-8eb5-6b0d67d103cf|e9dd2d8f-cc97-492e-9f4e-fd18b30ec4a6",
-        "courtyards_overlap|126483240|101620001|01938ae5-713d-4f3a-8eb5-6b0d67d103cf|4a0520e4-2df1-433e-b984-99b39082b2d9",
-        "courtyards_overlap|132420036|99620001|01938ae5-713d-4f3a-8eb5-6b0d67d103cf|4a07fd8e-d0d0-4192-99cc-978a886719a1",
-        "courtyards_overlap|132430000|101080000|01938ae5-713d-4f3a-8eb5-6b0d67d103cf|4a07fd8e-d0d0-4192-99cc-978a886719a1",
-        "courtyards_overlap|132505000|99330000|01938ae5-713d-4f3a-8eb5-6b0d67d103cf|c3d4d490-d5f5-4c2f-9d34-889e7df15816"
-      ],
+      "drc_exclusions": [],
       "meta": {
         "filename": "board_design_settings.json",
         "version": 2
@@ -124,13 +116,13 @@
       },
       "track_widths": [
         0.0,
-        0.127,
-        0.13,
-        0.147,
+        0.15,
         0.2,
-        0.23,
         0.25,
+        0.4,
         0.5,
+        0.6,
+        0.8,
         1.0,
         2.0,
         3.0
@@ -143,10 +135,18 @@
         {
           "diameter": 0.45,
           "drill": 0.25
+        },
+        {
+          "diameter": 0.6,
+          "drill": 0.3
+        },
+        {
+          "diameter": 0.8,
+          "drill": 0.4
         }
       ],
       "zones_allow_external_fillets": false,
-      "zones_use_no_outline": true
+      "zones_use_no_outline": false
     },
     "layer_presets": []
   },
@@ -395,24 +395,6 @@
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
         "name": "100R",
-        "nets": [],
-        "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.127,
-        "via_diameter": 0.45,
-        "via_drill": 0.25,
-        "wire_width": 6.0
-      },
-      {
-        "bus_width": 12.0,
-        "clearance": 0.13,
-        "diff_pair_gap": 0.127,
-        "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.206,
-        "line_style": 0,
-        "microvia_diameter": 0.3,
-        "microvia_drill": 0.1,
-        "name": "100RJLCPCB",
         "nets": [
           "/HDMI Connector Camera/A",
           "/HDMI Connector Camera/B",
@@ -445,7 +427,7 @@
         ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.206,
+        "track_width": 0.127,
         "via_diameter": 0.45,
         "via_drill": 0.25,
         "wire_width": 6.0
@@ -482,6 +464,7 @@
         "microvia_drill": 0.1,
         "name": "5V",
         "nets": [
+          "/P5V_HAT",
           "/PSU/P5V"
         ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
@@ -590,10 +573,6 @@
     [
       "7f3ba05c-fc58-41f8-952b-1e25e8824711",
       "i2s_dac"
-    ],
-    [
-      "155de7fc-6b88-42c8-ad2d-41bfbd00c697",
-      "Raspberry Pi"
     ],
     [
       "c96310d5-5754-4cd6-8de7-7840ff32f085",
