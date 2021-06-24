@@ -45,7 +45,7 @@
         "silk_text_upright": false,
         "zones": {
           "45_degree_only": false,
-          "min_clearance": 0.01
+          "min_clearance": 0.19999999999999998
         }
       },
       "diff_pair_dimensions": [
@@ -120,7 +120,8 @@
         "min_through_hole_diameter": 0.25,
         "min_track_width": 0.09999999999999999,
         "min_via_annular_width": 0.049999999999999996,
-        "min_via_diameter": 0.44999999999999996
+        "min_via_diameter": 0.44999999999999996,
+        "use_height_for_length_calcs": true
       },
       "track_widths": [
         0.0,
@@ -511,7 +512,7 @@
       }
     ],
     "meta": {
-      "version": 0
+      "version": 1
     },
     "net_colors": null
   },
@@ -553,7 +554,8 @@
       "meta": {
         "version": 0
       },
-      "model_mode": 0
+      "model_mode": 0,
+      "workbook_filename": ""
     },
     "page_layout_descr_file": "",
     "plot_directory": "",
@@ -564,7 +566,7 @@
   },
   "sheets": [
     [
-      "1fcb31a2-51e4-4be3-8124-9d26e186cfb4",
+      "20df0cea-1b8b-4bd1-8cc6-b6fc02c2d490",
       ""
     ],
     [
@@ -596,12 +598,12 @@
       "Raspberry Pi"
     ],
     [
-      "c96310d5-5754-4cd6-8de7-7840ff32f085",
-      "Light Input"
-    ],
-    [
       "696a3b6b-1b33-4b36-bded-7b3fb05e770a",
       "HDMI Connector Display"
+    ],
+    [
+      "c96310d5-5754-4cd6-8de7-7840ff32f085",
+      "Light Input"
     ]
   ],
   "text_variables": {}

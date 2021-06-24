@@ -1,4 +1,6 @@
-(kicad_sch (version 20210126) (generator eeschema)
+(kicad_sch (version 20210406) (generator eeschema)
+
+  (uuid 4fd93929-3605-4e94-9976-2611354f23db)
 
   (paper "A4")
 
@@ -1109,7 +1111,6 @@
       )
     )
   )
-
 
   (junction (at 39.37 156.21) (diameter 1.016) (color 0 0 0 0))
   (junction (at 41.275 112.395) (diameter 1.016) (color 0 0 0 0))
@@ -2491,7 +2492,7 @@
     (property "Value" "D_TVS" (id 1) (at 58.42 47.625 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Footprint" "Diode_SMD:D_SMB" (id 2) (at 55.245 45.72 0)
+    (property "Footprint" "Diode_SMD:D_SMA_Handsoldering" (id 2) (at 55.245 45.72 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 55.245 45.72 0)

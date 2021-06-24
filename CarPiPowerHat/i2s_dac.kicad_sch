@@ -1,4 +1,6 @@
-(kicad_sch (version 20210126) (generator eeschema)
+(kicad_sch (version 20210406) (generator eeschema)
+
+  (uuid fdb66482-1363-4244-9c75-3a5e58eb7c86)
 
   (paper "A4")
 
@@ -803,7 +805,6 @@
       )
     )
   )
-
 
   (junction (at 51.435 58.42) (diameter 0.9144) (color 0 0 0 0))
   (junction (at 51.435 86.36) (diameter 1.016) (color 0 0 0 0))
