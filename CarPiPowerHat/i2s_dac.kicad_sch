@@ -1,4 +1,4 @@
-(kicad_sch (version 20210406) (generator eeschema)
+(kicad_sch (version 20210621) (generator eeschema)
 
   (uuid fdb66482-1363-4244-9c75-3a5e58eb7c86)
 
@@ -62,7 +62,7 @@
         (text "UDA1334_I2C Audio DAC" (at 0 25.4 0)
           (effects (font (size 1.27 1.0795) (thickness 0.2159) bold))
         )
-        (text "VDDA/D: 2.4-3.6V_Op. Temp: -40~85°C" (at 0 -25.4 0)
+        (text "VDDA/D: 2.4-3.6V_Op. Temp: -40~{85°C}" (at 0 -25.4 0)
           (effects (font (size 1.27 1.0795)))
         )
         (polyline
