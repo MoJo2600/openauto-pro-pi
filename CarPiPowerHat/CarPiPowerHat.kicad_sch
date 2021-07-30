@@ -673,7 +673,7 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 56aef3a7-7c60-41ad-ba57-96329c57782c)
   )
-  (text "Offene Fragen:\n\nDSI/CSI Adapter\n- Impedance Matching CSI signale (90Ohm)\n- Längenmatching\n\nInputs:\n- ESD protection (TVS diodes)\n\nPSU\n- ESD protection / Fuses\n- Ground separation\n\nAnalog Teil\n- Analog ground (Layer und Teilung zu Digital GND)\n\nGround Fills auf linker Seite nötig?\nVias? Wo und wieviele?\n"
+  (text "Open Questions:\n\nDSI/CSI adaptors\n- Impedance matching CSI signals ok? (90Ohm)\n- length matching\n\nInputs:\n- ESD protection ok?(TVS diodes)\n\nPSU\n- ESD protection / fuses\n- Noise filter necessary?\n- Ground separation\n\nAnalog I2S part\n- Analog ground (layers and digital / analogue ground separation) ok?\n\nGround fills ok?\nVias ok?\n"
     (at 313.69 61.595 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 0f73c91a-625b-446a-bc5e-d79897bc0dab)
@@ -1422,9 +1422,6 @@
     (path "/443a7196-d464-4931-a159-a5232b366428"
       (reference "#PWR01") (unit 1) (value "GND") (footprint "")
     )
-    (path "/d7dab0b1-a885-42c4-b558-97d79e73318c/454a9985-443f-48e2-8597-c05a8aa0e183"
-      (reference "#PWR02") (unit 1) (value "GND") (footprint "")
-    )
     (path "/d7dab0b1-a885-42c4-b558-97d79e73318c/d951192e-ba34-4ff0-b42a-4f774a00b3ca"
       (reference "#PWR0101") (unit 1) (value "GND") (footprint "")
     )
@@ -1716,14 +1713,8 @@
     (path "/c779e344-5031-4f2d-bf31-77741b3c4be9/9fef9f7d-ce53-455a-b81f-ed54ca115295"
       (reference "D2") (unit 1) (value "LED") (footprint "LED_SMD:LED_0603_1608Metric")
     )
-    (path "/d7dab0b1-a885-42c4-b558-97d79e73318c/2d7884e7-c922-4924-9b7c-055eedf7474e"
-      (reference "D3") (unit 1) (value "D_TVS") (footprint "Diode_SMD:D_SMA_Handsoldering")
-    )
     (path "/d7dab0b1-a885-42c4-b558-97d79e73318c/8bc91e64-556e-4665-9d5b-8482b59816d9"
       (reference "D4") (unit 1) (value "MMBZ5242BLT3G") (footprint "Diode_SMD:D_SOT-23_ANK")
-    )
-    (path "/c779e344-5031-4f2d-bf31-77741b3c4be9/3c4a94e7-eac2-4d14-b912-c1f8a8e56573"
-      (reference "D5") (unit 1) (value "D_TVS") (footprint "Diode_SMD:D_SMA_Handsoldering")
     )
     (path "/c779e344-5031-4f2d-bf31-77741b3c4be9/bd9b82f1-f608-4156-9ed5-b3990567b899"
       (reference "D6") (unit 1) (value "D_Dual_CommonCathode_AAK_Parallel") (footprint "Package_TO_SOT_SMD:SOT-23")
