@@ -4,6 +4,10 @@ This hat is designed to work together with OpenAuto Pro and deliver some functio
 
 ![front](documentation/powerhat_front.png)
 
+## Work in progress - a word of warning
+
+I'm not an electronics professional and this board is currently work in progress. If somebody is willing to do a indepth review with me I would be very glad. Reach out to me at `mail@mojo2k.de` or twitter @MoJo2600.
+
 ## Features
 
 * Integrated 5A Power Supply
@@ -18,10 +22,10 @@ This hat is designed to work together with OpenAuto Pro and deliver some functio
 
 ## ToDo
 
-- [] ESD protection for inputs
-- [] EMI
-- [] Fuses
-- [] Add 3D models for case and display to repo
+- [ ] ESD protection for inputs
+- [ ] EMI
+- [ ] Fuses
+- [ ] Add 3D models for case and display to repo
 
 ## History
 
