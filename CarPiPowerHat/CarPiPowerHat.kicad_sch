@@ -1069,10 +1069,10 @@
     (stroke (width 0.001) (type solid) (color 0 0 0 0))
     (fill (color 0 0 0 0.0000))
     (uuid 1fcb31a2-51e4-4be3-8124-9d26e186cfb4)
-    (property "Schaltplanname" "HDMI Connector Camera" (id 0) (at 53.34 187.9591 0)
+    (property "Sheet name" "HDMI Connector Camera" (id 0) (at 53.34 187.9591 0)
       (effects (font (size 1.27 1.27)) (justify left bottom))
     )
-    (property "Dateiname Blatt" "hdmi_connectors.kicad_sch" (id 1) (at 53.34 218.3139 0)
+    (property "Sheet file" "hdmi_connectors.kicad_sch" (id 1) (at 53.34 218.3139 0)
       (effects (font (size 1.27 1.27)) (justify left top))
     )
     (pin "GND" output (at 53.34 214.63 180)
@@ -1101,10 +1101,10 @@
     (stroke (width 0.001) (type solid) (color 0 0 0 0))
     (fill (color 0 0 0 0.0000))
     (uuid 696a3b6b-1b33-4b36-bded-7b3fb05e770a)
-    (property "Schaltplanname" "HDMI Connector Display" (id 0) (at 97.155 188.5941 0)
+    (property "Sheet name" "HDMI Connector Display" (id 0) (at 97.155 188.5941 0)
       (effects (font (size 1.27 1.27)) (justify left bottom))
     )
-    (property "Dateiname Blatt" "hdmi_connectors.kicad_sch" (id 1) (at 97.155 218.9489 0)
+    (property "Sheet file" "hdmi_connectors.kicad_sch" (id 1) (at 97.155 218.9489 0)
       (effects (font (size 1.27 1.27)) (justify left top))
     )
     (pin "GND" output (at 97.155 215.265 180)
@@ -1133,10 +1133,10 @@
     (stroke (width 0) (type solid) (color 0 0 0 0))
     (fill (color 0 0 0 0.0000))
     (uuid c96310d5-5754-4cd6-8de7-7840ff32f085)
-    (property "Schaltplanname" "Light Input" (id 0) (at 78.74 104.7745 0)
+    (property "Sheet name" "Light Input" (id 0) (at 78.74 104.7745 0)
       (effects (font (size 1.27 1.27)) (justify left bottom))
     )
-    (property "Dateiname Blatt" "input_pin_protect.kicad_sch" (id 1) (at 78.74 117.9835 0)
+    (property "Sheet file" "input_pin_protect.kicad_sch" (id 1) (at 78.74 117.9835 0)
       (effects (font (size 1.27 1.27)) (justify left top))
     )
     (pin "IN" input (at 78.74 107.95 180)
@@ -1161,10 +1161,10 @@
     (stroke (width 0.001) (type solid) (color 0 0 0 0))
     (fill (color 0 0 0 0.0000))
     (uuid d7dab0b1-a885-42c4-b558-97d79e73318c)
-    (property "Schaltplanname" "PSU" (id 0) (at 279.4 206.3741 0)
+    (property "Sheet name" "PSU" (id 0) (at 279.4 206.3741 0)
       (effects (font (size 1.27 1.27)) (justify left bottom))
     )
-    (property "Dateiname Blatt" "psu.kicad_sch" (id 1) (at 279.4 232.9189 0)
+    (property "Sheet file" "psu.kicad_sch" (id 1) (at 279.4 232.9189 0)
       (effects (font (size 1.27 1.27)) (justify left top))
     )
     (pin "+5v" output (at 311.15 211.455 0)
@@ -1189,10 +1189,10 @@
     (stroke (width 0.001) (type solid) (color 0 0 0 0))
     (fill (color 0 0 0 0.0000))
     (uuid c779e344-5031-4f2d-bf31-77741b3c4be9)
-    (property "Schaltplanname" "Power Control" (id 0) (at 221.615 206.3741 0)
+    (property "Sheet name" "Power Control" (id 0) (at 221.615 206.3741 0)
       (effects (font (size 1.27 1.27)) (justify left bottom))
     )
-    (property "Dateiname Blatt" "power_control.kicad_sch" (id 1) (at 221.615 231.6489 0)
+    (property "Sheet file" "power_control.kicad_sch" (id 1) (at 221.615 231.6489 0)
       (effects (font (size 1.27 1.27)) (justify left top))
     )
     (pin "PSU_EN" output (at 252.73 217.17 0)
@@ -1225,10 +1225,10 @@
     (stroke (width 0.0006) (type solid) (color 0 0 0 0))
     (fill (color 0 0 0 0.0000))
     (uuid f1426ddb-6257-479f-8e44-f1c73b1b9fa1)
-    (property "Schaltplanname" "RTC Clock" (id 0) (at 78.74 135.2543 0)
+    (property "Sheet name" "RTC Clock" (id 0) (at 78.74 135.2543 0)
       (effects (font (size 1.27 1.27)) (justify left bottom))
     )
-    (property "Dateiname Blatt" "RTC.kicad_sch" (id 1) (at 78.74 164.3387 0)
+    (property "Sheet file" "RTC.kicad_sch" (id 1) (at 78.74 164.3387 0)
       (effects (font (size 1.27 1.27)) (justify left top))
     )
     (pin "+3.3v" input (at 78.74 159.385 180)
@@ -1253,10 +1253,10 @@
     (stroke (width 0.0006) (type solid) (color 0 0 0 0))
     (fill (color 0 0 0 0.0000))
     (uuid 155de7fc-6b88-42c8-ad2d-41bfbd00c697)
-    (property "Schaltplanname" "Raspberry Pi" (id 0) (at 191.77 85.7243 0)
+    (property "Sheet name" "Raspberry Pi" (id 0) (at 191.77 85.7243 0)
       (effects (font (size 1.27 1.27)) (justify left bottom))
     )
-    (property "Dateiname Blatt" "raspberry.kicad_sch" (id 1) (at 191.77 174.4987 0)
+    (property "Sheet file" "raspberry.kicad_sch" (id 1) (at 191.77 174.4987 0)
       (effects (font (size 1.27 1.27)) (justify left top))
     )
     (pin "GND" output (at 191.77 170.815 180)
@@ -1317,10 +1317,10 @@
     (stroke (width 0) (type solid) (color 0 0 0 0))
     (fill (color 0 0 0 0.0000))
     (uuid 24bd5701-0eb0-4ec6-b68f-934ea2fa56bc)
-    (property "Schaltplanname" "Reverse Input" (id 0) (at 78.74 83.1845 0)
+    (property "Sheet name" "Reverse Input" (id 0) (at 78.74 83.1845 0)
       (effects (font (size 1.27 1.27)) (justify left bottom))
     )
-    (property "Dateiname Blatt" "input_pin_protect.kicad_sch" (id 1) (at 78.74 96.3935 0)
+    (property "Sheet file" "input_pin_protect.kicad_sch" (id 1) (at 78.74 96.3935 0)
       (effects (font (size 1.27 1.27)) (justify left top))
     )
     (pin "IN" input (at 78.74 86.36 180)
@@ -1345,10 +1345,10 @@
     (stroke (width 0.0006) (type solid) (color 0 0 0 0))
     (fill (color 0 0 0 0.0000))
     (uuid 7f3ba05c-fc58-41f8-952b-1e25e8824711)
-    (property "Schaltplanname" "i2s_dac" (id 0) (at 303.53 119.3793 0)
+    (property "Sheet name" "i2s_dac" (id 0) (at 303.53 119.3793 0)
       (effects (font (size 1.27 1.27)) (justify left bottom))
     )
-    (property "Dateiname Blatt" "i2s_dac.kicad_sch" (id 1) (at 303.53 147.8287 0)
+    (property "Sheet file" "i2s_dac.kicad_sch" (id 1) (at 303.53 147.8287 0)
       (effects (font (size 1.27 1.27)) (justify left top))
     )
     (pin "LRCLK" input (at 303.53 128.905 180)
@@ -1569,6 +1569,9 @@
     (path "/155de7fc-6b88-42c8-ad2d-41bfbd00c697/41a308a0-23c3-4534-b335-eeac63ffd31c"
       (reference "#PWR0149") (unit 1) (value "GND") (footprint "")
     )
+    (path "/d7dab0b1-a885-42c4-b558-97d79e73318c/c6271b9c-c167-4bea-9577-f5683b7f2851"
+      (reference "#PWR0150") (unit 1) (value "GND") (footprint "")
+    )
     (path "/7f3ba05c-fc58-41f8-952b-1e25e8824711/26a6b540-1723-4e97-a63b-4aa8775ecc5b"
       (reference "#U$0101") (unit 1) (value "GND") (footprint "")
     )
@@ -1597,25 +1600,25 @@
       (reference "BT1") (unit 1) (value "Battery_Cell") (footprint "Battery:BatteryHolder_Keystone_3034_1x20mm")
     )
     (path "/d7dab0b1-a885-42c4-b558-97d79e73318c/85e175e0-625c-4542-b559-bedcca65967c"
-      (reference "C1") (unit 1) (value "10u 35v") (footprint "Capacitor_SMD:C_0805_2012Metric")
+      (reference "C1") (unit 1) (value "10uF 35v") (footprint "Capacitor_SMD:C_0805_2012Metric")
     )
     (path "/d7dab0b1-a885-42c4-b558-97d79e73318c/2924a8b6-6b94-4f8d-98da-b8f9f532f3f9"
-      (reference "C2") (unit 1) (value "10u 35v") (footprint "Capacitor_SMD:C_0805_2012Metric")
+      (reference "C2") (unit 1) (value "10uF 35v") (footprint "Capacitor_SMD:C_0805_2012Metric")
     )
     (path "/d7dab0b1-a885-42c4-b558-97d79e73318c/6ff51d33-b1d7-471b-a916-2748f21d7328"
-      (reference "C3") (unit 1) (value "10u 35v") (footprint "Capacitor_SMD:C_0805_2012Metric")
+      (reference "C3") (unit 1) (value "10uF 35v") (footprint "Capacitor_SMD:C_0805_2012Metric")
     )
     (path "/d7dab0b1-a885-42c4-b558-97d79e73318c/280b8a7f-a8e2-46c3-95f9-b919bd3d00a9"
       (reference "C4") (unit 1) (value "100n 100v") (footprint "Capacitor_SMD:C_0402_1005Metric")
     )
     (path "/d7dab0b1-a885-42c4-b558-97d79e73318c/5b14dd28-7ee8-40ad-b00a-28391302a839"
-      (reference "C5") (unit 1) (value "10u 35v") (footprint "Capacitor_SMD:C_0805_2012Metric")
+      (reference "C5") (unit 1) (value "10uF 35v") (footprint "Capacitor_SMD:C_0805_2012Metric")
     )
     (path "/d7dab0b1-a885-42c4-b558-97d79e73318c/643050f9-9e9f-42eb-9c50-e32fbc5a5eda"
-      (reference "C6") (unit 1) (value "10u 35v") (footprint "Capacitor_SMD:C_0805_2012Metric")
+      (reference "C6") (unit 1) (value "10uF 35v") (footprint "Capacitor_SMD:C_0805_2012Metric")
     )
     (path "/d7dab0b1-a885-42c4-b558-97d79e73318c/49c15c5a-7d0c-49d2-a989-7bd1eea77e95"
-      (reference "C7") (unit 1) (value "10u 35v") (footprint "Capacitor_SMD:C_0805_2012Metric")
+      (reference "C7") (unit 1) (value "10uF 35v") (footprint "Capacitor_SMD:C_0805_2012Metric")
     )
     (path "/d7dab0b1-a885-42c4-b558-97d79e73318c/2a93a652-4e48-4333-abc8-981d854db564"
       (reference "C8") (unit 1) (value "100n") (footprint "Capacitor_SMD:C_0402_1005Metric")
@@ -1627,7 +1630,7 @@
       (reference "C10") (unit 1) (value "100n") (footprint "Capacitor_SMD:C_0402_1005Metric")
     )
     (path "/d7dab0b1-a885-42c4-b558-97d79e73318c/3b1e3264-c7f4-4730-bda0-9850943e74d5"
-      (reference "C11") (unit 1) (value "10u 35v") (footprint "Capacitor_SMD:C_0805_2012Metric")
+      (reference "C11") (unit 1) (value "10uF 35v") (footprint "Capacitor_SMD:C_0805_2012Metric")
     )
     (path "/d7dab0b1-a885-42c4-b558-97d79e73318c/cdfb4c15-01d0-4747-8ffa-f76b350191bc"
       (reference "C12") (unit 1) (value "nf") (footprint "Capacitor_SMD:C_0402_1005Metric")
@@ -1639,16 +1642,16 @@
       (reference "C14") (unit 1) (value "nf") (footprint "Capacitor_SMD:C_0402_1005Metric")
     )
     (path "/d7dab0b1-a885-42c4-b558-97d79e73318c/fb843fc7-522f-439f-9f17-a9115d198816"
-      (reference "C15") (unit 1) (value "10u") (footprint "Capacitor_SMD:C_0805_2012Metric")
+      (reference "C15") (unit 1) (value "10uF") (footprint "Capacitor_SMD:C_0805_2012Metric")
     )
     (path "/d7dab0b1-a885-42c4-b558-97d79e73318c/5e0c5477-23c3-40fd-8e0f-3a0ffc6015cd"
-      (reference "C16") (unit 1) (value "10u") (footprint "Capacitor_SMD:C_0805_2012Metric")
+      (reference "C16") (unit 1) (value "10uF") (footprint "Capacitor_SMD:C_0805_2012Metric")
     )
     (path "/d7dab0b1-a885-42c4-b558-97d79e73318c/0b21f454-189a-4247-882d-c4b137208409"
-      (reference "C17") (unit 1) (value "10u") (footprint "Capacitor_SMD:C_0805_2012Metric")
+      (reference "C17") (unit 1) (value "10uF") (footprint "Capacitor_SMD:C_0805_2012Metric")
     )
     (path "/d7dab0b1-a885-42c4-b558-97d79e73318c/4881d3be-0602-4bd2-9d96-46ea810dcdce"
-      (reference "C18") (unit 1) (value "10u") (footprint "Capacitor_SMD:C_0805_2012Metric")
+      (reference "C18") (unit 1) (value "10uF") (footprint "Capacitor_SMD:C_0805_2012Metric")
     )
     (path "/d7dab0b1-a885-42c4-b558-97d79e73318c/4c196f0a-866e-4836-aa3a-d68fc0786a80"
       (reference "C19") (unit 1) (value "100uF") (footprint "Capacitor_Tantalum_SMD:CP_EIA-7343-31_Kemet-D")
@@ -1660,10 +1663,10 @@
       (reference "C21") (unit 1) (value "100n") (footprint "Capacitor_SMD:C_0402_1005Metric")
     )
     (path "/24bd5701-0eb0-4ec6-b68f-934ea2fa56bc/a7aec7cf-6efd-4fec-8162-e5e3d25f683e"
-      (reference "C22") (unit 1) (value "10u") (footprint "Resistor_SMD:R_0603_1608Metric")
+      (reference "C22") (unit 1) (value "10uF") (footprint "Capacitor_SMD:C_0603_1608Metric")
     )
     (path "/c96310d5-5754-4cd6-8de7-7840ff32f085/a7aec7cf-6efd-4fec-8162-e5e3d25f683e"
-      (reference "C23") (unit 1) (value "10u") (footprint "Resistor_SMD:R_0603_1608Metric")
+      (reference "C23") (unit 1) (value "10uF") (footprint "Capacitor_SMD:C_0603_1608Metric")
     )
     (path "/f1426ddb-6257-479f-8e44-f1c73b1b9fa1/d38d1026-9ed6-4e0d-a9fc-6c7469597c76"
       (reference "C24") (unit 1) (value "100n") (footprint "Capacitor_SMD:C_0402_1005Metric")
@@ -1678,7 +1681,7 @@
       (reference "C27") (unit 1) (value "0.1uF") (footprint "Capacitor_SMD:C_0603_1608Metric")
     )
     (path "/7f3ba05c-fc58-41f8-952b-1e25e8824711/42262a60-523e-4279-a983-60762d10e1ab"
-      (reference "C28") (unit 1) (value "10uF") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
+      (reference "C28") (unit 1) (value "10uF") (footprint "Capacitor_SMD:C_0805_2012Metric")
     )
     (path "/7f3ba05c-fc58-41f8-952b-1e25e8824711/873e76d5-449a-4041-a884-82fb3f659964"
       (reference "C29") (unit 1) (value "10uF") (footprint "Capacitor_SMD:C_0805_2012Metric")
@@ -1687,7 +1690,7 @@
       (reference "C30") (unit 1) (value "0.1uF") (footprint "Capacitor_SMD:C_0603_1608Metric")
     )
     (path "/7f3ba05c-fc58-41f8-952b-1e25e8824711/1366ea31-5843-45bd-a231-648bee49deed"
-      (reference "C31") (unit 1) (value "10uF") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
+      (reference "C31") (unit 1) (value "10uF") (footprint "Capacitor_SMD:C_0805_2012Metric")
     )
     (path "/7f3ba05c-fc58-41f8-952b-1e25e8824711/150d7ccd-98e3-4d6e-84cd-6c3198e67450"
       (reference "C32") (unit 1) (value "0.1uF") (footprint "Capacitor_SMD:C_0603_1608Metric")
@@ -1708,40 +1711,37 @@
       (reference "C37") (unit 1) (value "0.01uF") (footprint "Capacitor_SMD:C_0603_1608Metric")
     )
     (path "/c779e344-5031-4f2d-bf31-77741b3c4be9/4b70c4e6-76ec-4cce-ba57-391430d49c52"
-      (reference "D1") (unit 1) (value "LED") (footprint "LED_SMD:LED_0603_1608Metric")
+      (reference "D1") (unit 1) (value "LED Red") (footprint "LED_SMD:LED_0603_1608Metric")
     )
     (path "/c779e344-5031-4f2d-bf31-77741b3c4be9/9fef9f7d-ce53-455a-b81f-ed54ca115295"
-      (reference "D2") (unit 1) (value "LED") (footprint "LED_SMD:LED_0603_1608Metric")
+      (reference "D2") (unit 1) (value "LED Green") (footprint "LED_SMD:LED_0603_1608Metric")
+    )
+    (path "/d7dab0b1-a885-42c4-b558-97d79e73318c/5c1b47d6-7bb5-46df-a9ec-7d792efd960a"
+      (reference "D3") (unit 1) (value "SMBJ33A") (footprint "Diode_SMD:D_SMB")
     )
     (path "/d7dab0b1-a885-42c4-b558-97d79e73318c/8bc91e64-556e-4665-9d5b-8482b59816d9"
       (reference "D4") (unit 1) (value "MMBZ5242BLT3G") (footprint "Diode_SMD:D_SOT-23_ANK")
     )
-    (path "/c779e344-5031-4f2d-bf31-77741b3c4be9/bd9b82f1-f608-4156-9ed5-b3990567b899"
-      (reference "D6") (unit 1) (value "D_Dual_CommonCathode_AAK_Parallel") (footprint "Package_TO_SOT_SMD:SOT-23")
+    (path "/24bd5701-0eb0-4ec6-b68f-934ea2fa56bc/7aecce5c-96d9-4024-8e1b-6407c3a706c1"
+      (reference "D5") (unit 1) (value "BAT54S") (footprint "Package_TO_SOT_SMD:SOT-23")
+    )
+    (path "/c779e344-5031-4f2d-bf31-77741b3c4be9/1efac715-49c1-4790-9de3-ede06be5be54"
+      (reference "D6") (unit 1) (value "BAT54C-7-F") (footprint "Package_TO_SOT_SMD:SOT-23")
     )
     (path "/24bd5701-0eb0-4ec6-b68f-934ea2fa56bc/a6fc146e-ca8f-4781-9723-3ce54fa0adcc"
-      (reference "D7") (unit 1) (value "D_TVS") (footprint "Diode_SMD:D_0603_1608Metric")
+      (reference "D7") (unit 1) (value "TPGBLC12C") (footprint "Diode_SMD:D_SOD-323")
     )
-    (path "/24bd5701-0eb0-4ec6-b68f-934ea2fa56bc/5b5fbbe5-fb7a-485f-af9c-82952df69f1d"
-      (reference "D8") (unit 1) (value "D_Schottky") (footprint "Diode_SMD:D_SOD-123")
+    (path "/24bd5701-0eb0-4ec6-b68f-934ea2fa56bc/2ee815b6-323c-43c9-b0b5-1535fe299bbb"
+      (reference "D8") (unit 1) (value "D_Schottky 15mA") (footprint "Diode_SMD:D_SOD-323")
     )
-    (path "/24bd5701-0eb0-4ec6-b68f-934ea2fa56bc/7601a0ac-ee75-402c-b37e-e870075f048b"
-      (reference "D9") (unit 1) (value "D_Schottky") (footprint "Diode_SMD:D_SOD-123")
+    (path "/c96310d5-5754-4cd6-8de7-7840ff32f085/7aecce5c-96d9-4024-8e1b-6407c3a706c1"
+      (reference "D9") (unit 1) (value "BAT54S") (footprint "Package_TO_SOT_SMD:SOT-23")
     )
-    (path "/24bd5701-0eb0-4ec6-b68f-934ea2fa56bc/4ebe108f-cd7f-486b-a881-5ea3efb10a48"
-      (reference "D10") (unit 1) (value "D") (footprint "Diode_SMD:D_SOD-123F")
+    (path "/c96310d5-5754-4cd6-8de7-7840ff32f085/2ee815b6-323c-43c9-b0b5-1535fe299bbb"
+      (reference "D10") (unit 1) (value "D_Schottky 15mA") (footprint "Diode_SMD:D_SOD-323")
     )
     (path "/c96310d5-5754-4cd6-8de7-7840ff32f085/a6fc146e-ca8f-4781-9723-3ce54fa0adcc"
-      (reference "D11") (unit 1) (value "D_TVS") (footprint "Diode_SMD:D_0603_1608Metric")
-    )
-    (path "/c96310d5-5754-4cd6-8de7-7840ff32f085/5b5fbbe5-fb7a-485f-af9c-82952df69f1d"
-      (reference "D12") (unit 1) (value "D_Schottky") (footprint "Diode_SMD:D_SOD-123")
-    )
-    (path "/c96310d5-5754-4cd6-8de7-7840ff32f085/7601a0ac-ee75-402c-b37e-e870075f048b"
-      (reference "D13") (unit 1) (value "D_Schottky") (footprint "Diode_SMD:D_SOD-123")
-    )
-    (path "/c96310d5-5754-4cd6-8de7-7840ff32f085/4ebe108f-cd7f-486b-a881-5ea3efb10a48"
-      (reference "D14") (unit 1) (value "D") (footprint "Diode_SMD:D_SOD-123F")
+      (reference "D11") (unit 1) (value "TPGBLC12C") (footprint "Diode_SMD:D_SOD-323")
     )
     (path "/f1426ddb-6257-479f-8e44-f1c73b1b9fa1/6c8e7a1e-bf7b-4dec-804e-7a730187dd5f"
       (reference "D15") (unit 1) (value "BAT54C-7-F") (footprint "Package_TO_SOT_SMD:SOT-23")
@@ -1754,12 +1754,6 @@
     )
     (path "/7f3ba05c-fc58-41f8-952b-1e25e8824711/9c2dc2a4-84eb-446d-a7cb-9fdcd51e5a40"
       (reference "FB1") (unit 1) (value "Ferrite") (footprint "Resistor_SMD:R_0805_2012Metric")
-    )
-    (path "/24bd5701-0eb0-4ec6-b68f-934ea2fa56bc/e12adda5-57cc-4e53-bb84-de68a5088d6d"
-      (reference "FB2") (unit 1) (value "FerriteBead") (footprint "Resistor_SMD:R_0805_2012Metric")
-    )
-    (path "/c96310d5-5754-4cd6-8de7-7840ff32f085/e12adda5-57cc-4e53-bb84-de68a5088d6d"
-      (reference "FB3") (unit 1) (value "FerriteBead") (footprint "Resistor_SMD:R_0805_2012Metric")
     )
     (path "/7f3ba05c-fc58-41f8-952b-1e25e8824711/89d02442-4aa6-40ed-9c72-26e8aad6f4f0"
       (reference "FB4") (unit 1) (value "Ferrite") (footprint "Resistor_SMD:R_0805_2012Metric")
@@ -1864,7 +1858,7 @@
       (reference "R10") (unit 1) (value "12K 1%") (footprint "Resistor_SMD:R_0402_1005Metric")
     )
     (path "/c779e344-5031-4f2d-bf31-77741b3c4be9/e887517c-961e-44c6-992b-959f9f108523"
-      (reference "R11") (unit 1) (value "130") (footprint "Resistor_SMD:R_0603_1608Metric")
+      (reference "R11") (unit 1) (value "130") (footprint "Resistor_SMD:R_0402_1005Metric")
     )
     (path "/d7dab0b1-a885-42c4-b558-97d79e73318c/e121c6a8-b20c-4ee2-b292-0297be96f983"
       (reference "R12") (unit 1) (value "2.2K 1%") (footprint "Resistor_SMD:R_0402_1005Metric")
