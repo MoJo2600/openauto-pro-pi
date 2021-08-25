@@ -4,6 +4,12 @@
 
   (paper "A4")
 
+  (title_block
+    (title "Raspberry Pi Header")
+    (date "2021-08-24")
+    (rev "1")
+  )
+
   (lib_symbols
     (symbol "CarPiPowerHat:CAT24C32" (pin_names (offset 0.762)) (in_bom yes) (on_board yes)
       (property "Reference" "U" (id 0) (at -8.89 8.89 0)
@@ -886,7 +892,7 @@
     (property "Datasheet" "~" (id 3) (at 69.85 152.4 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "LCSC" " C25804" (id 4) (at 69.85 152.4 90)
+    (property "LCSC" "C25804" (id 4) (at 69.85 152.4 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 6cf4eaa0-0583-4da8-b7c3-ca91233a9538))
@@ -904,7 +910,7 @@
     (property "Datasheet" "~" (id 3) (at 90.17 181.61 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "LCSC" "C22978" (id 4) (at 90.17 181.61 90)
+    (property "LCSC" "C23018" (id 4) (at 90.17 181.61 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 35aa2d43-40e7-444c-b6bc-c6f53e5565ed))
@@ -922,7 +928,7 @@
     (property "Datasheet" "~" (id 3) (at 90.17 187.96 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "LCSC" "C22978" (id 4) (at 90.17 187.96 90)
+    (property "LCSC" "C23018" (id 4) (at 90.17 187.96 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid f9eb2c57-ab9a-403b-b965-1495bb737cad))
@@ -936,6 +942,9 @@
     (property "Value" "CAT24C32" (id 1) (at 77.47 133.35 0))
     (property "Footprint" "Package_SOIC:SOIC-8_3.9x4.9mm_P1.27mm" (id 2) (at 107.95 153.035 0))
     (property "Datasheet" "" (id 3) (at 83.82 142.24 0))
+    (property "LCSC" "C81193" (id 4) (at 83.82 142.24 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
     (pin "4" (uuid 58d46d0d-9304-47d8-8e8d-1df2756bc543))
     (pin "8" (uuid cdb85583-9c1b-4daa-ac53-90c61fdb135a))
     (pin "1" (uuid ca3e7b83-20e4-4b61-a97e-413646b82f51))

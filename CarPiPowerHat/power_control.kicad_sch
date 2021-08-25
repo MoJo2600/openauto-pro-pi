@@ -4,6 +4,12 @@
 
   (paper "A4")
 
+  (title_block
+    (title "Power Control Circuit")
+    (date "2021-08-24")
+    (rev "1")
+  )
+
   (lib_symbols
     (symbol "Connector:TestPoint" (pin_numbers hide) (pin_names (offset 0.762) hide) (in_bom yes) (on_board yes)
       (property "Reference" "TP" (id 0) (at 0 6.858 0)
@@ -1417,7 +1423,7 @@
     (property "Datasheet" "~" (id 3) (at 181.61 47.625 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "LCSC" "" (id 4) (at 181.61 47.625 0)
+    (property "LCSC" "C270649" (id 4) (at 181.61 47.625 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 3a9e9d41-a0ff-4bf6-95f9-6b39e94b647a))
@@ -1511,7 +1517,7 @@
     (property "Reference" "C20" (id 0) (at 57.785 48.895 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "100n" (id 1) (at 57.785 53.975 0)
+    (property "Value" "100n 16v" (id 1) (at 57.785 53.975 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "Capacitor_SMD:C_0402_1005Metric" (id 2) (at 56.2102 55.245 0)
@@ -1551,7 +1557,7 @@
     (property "Reference" "C21" (id 0) (at 83.185 48.895 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "100n" (id 1) (at 83.185 53.975 0)
+    (property "Value" "100n 16v" (id 1) (at 83.185 53.975 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "Capacitor_SMD:C_0402_1005Metric" (id 2) (at 81.6102 55.245 0)
@@ -1655,6 +1661,9 @@
       (effects (font (size 1.27 1.27) italic) hide)
     )
     (property "Datasheet" "http://ww1.microchip.com/downloads/en/DeviceDoc/atmel-2586-avr-8-bit-microcontroller-attiny25-attiny45-attiny85_datasheet.pdf" (id 3) (at 119.38 62.23 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "LCSC" "C144181" (id 4) (at 119.38 62.23 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 42f55316-e5aa-43a1-93d7-11b579f8e29a))
