@@ -24,15 +24,19 @@ enum State {
 volatile State g_currentState = IDLE;
 unsigned long g_eventStartMillis = 0L;
 Bounce b_piIn = Bounce(); // Instantiate a Bounce object
+Bounce b_ignSense = Bounce(); // Instantiate a Bounce object
 
 void setup() {
 
   b_piIn.attach(PIN_PI_IN, INPUT); // Attach the debouncer to a pin with INPUT_PULLUP mode
-  b_piIn.interval(125); // Use a debounce interval of 25 milliseconds
+  b_piIn.interval(125); // Use a debounce interval of 125 milliseconds
+
+  b_ignSense.attach(PIN_IGN_SENSE, INPUT); // Attach the debouncer to a pin with INPUT_PULLUP mode
+  b_ignSense.interval(250); // Use a debounce interval of 250 milliseconds
 
   pinMode(PIN_LED, OUTPUT);
   pinMode(PIN_POWER_CNTRL, OUTPUT);
-  digitalWrite(PIN_POWER_CNTRL, 1);
+  digitalWrite(PIN_POWER_CNTRL, 0);
   pinMode(PIN_IGN_SENSE, INPUT);
   pinMode(PIN_PI_IN, INPUT);
   pinMode(PIN_PI_OUT, OUTPUT);
@@ -42,11 +46,12 @@ void setup() {
 
 void loop() {
   b_piIn.update();                                                             // Update the Bounce instance
+  b_ignSense.update();                                                             // Update the Bounce instance
 
   switch(g_currentState) {
     case IDLE:
       if (digitalRead(PIN_IGN_SENSE)) {                                        // Ignition is on, enable power for pi to boot
-        digitalWrite(PIN_POWER_CNTRL, 0);
+        digitalWrite(PIN_POWER_CNTRL, 1);
         g_eventStartMillis = millis();
         g_currentState = WAIT_FOR_PI_BOOT;
       }
@@ -67,7 +72,7 @@ void loop() {
 
       break;
     case RUNNING:
-      if (!digitalRead(PIN_IGN_SENSE)) {                                       // Ignition is switched off shutdown pi
+      if (!b_ignSense.fell()) {                                       // Ignition is switched off shutdown pi
         g_eventStartMillis = millis();
         digitalWrite(PIN_PI_OUT, 1);                                           // Tell pi to shut down
         g_currentState = WAIT_FOR_PI_SHUTDOWN;
@@ -88,7 +93,7 @@ void loop() {
       break;
     case SHUTDOWN:
       analogWrite(PIN_LED, 0);
-      digitalWrite(PIN_POWER_CNTRL, 1);
+      digitalWrite(PIN_POWER_CNTRL, 0);
       g_currentState = IDLE;
       break;
     //   analogWrite(PIN_LED, sin( 2 * PI / PULSE_DURATION_FAST * (millis() - g_eventStartMillis) + 3 * PI / 2) * 128 + 128);
