@@ -45,7 +45,7 @@
         "silk_text_upright": false,
         "zones": {
           "45_degree_only": false,
-          "min_clearance": 0.19999999999999998
+          "min_clearance": 0.0
         }
       },
       "diff_pair_dimensions": [
@@ -131,6 +131,7 @@
         0.2,
         0.23,
         0.25,
+        0.3,
         0.5,
         1.0,
         2.0,
@@ -351,7 +352,7 @@
       "no_connect_dangling": "warning",
       "pin_not_connected": "error",
       "pin_not_driven": "error",
-      "pin_to_pin": "warning",
+      "pin_to_pin": "error",
       "power_pin_not_driven": "error",
       "similar_labels": "warning",
       "unannotated": "error",
@@ -407,10 +408,10 @@
       },
       {
         "bus_width": 12.0,
-        "clearance": 0.13,
-        "diff_pair_gap": 0.127,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.203,
         "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.206,
+        "diff_pair_width": 0.127,
         "line_style": 0,
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
@@ -447,7 +448,7 @@
         ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.206,
+        "track_width": 0.127,
         "via_diameter": 0.45,
         "via_drill": 0.25,
         "wire_width": 6.0
@@ -495,10 +496,30 @@
       },
       {
         "bus_width": 12.0,
-        "clearance": 0.13,
-        "diff_pair_gap": 0.1524,
+        "clearance": 0.25,
+        "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.2286,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "5VUSB",
+        "nets": [
+          "/PSU/USB_5v"
+        ],
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 1.0,
+        "via_diameter": 0.45,
+        "via_drill": 0.25,
+        "wire_width": 6.0
+      },
+      {
+        "bus_width": 12.0,
+        "clearance": 0.13,
+        "diff_pair_gap": 0.203,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.147,
         "line_style": 0,
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
@@ -532,7 +553,7 @@
     "annotate_start_num": 0,
     "drawing": {
       "default_bus_thickness": 12.0,
-      "default_junction_size": 40.0,
+      "default_junction_size": 36.0,
       "default_line_thickness": 6.0,
       "default_text_size": 50.0,
       "default_wire_thickness": 6.0,
@@ -598,6 +619,10 @@
     [
       "155de7fc-6b88-42c8-ad2d-41bfbd00c697",
       "Raspberry Pi"
+    ],
+    [
+      "a771b440-8458-4bfd-a06e-f54fd0a737a3",
+      "I2S WM8960"
     ],
     [
       "696a3b6b-1b33-4b36-bded-7b3fb05e770a",
