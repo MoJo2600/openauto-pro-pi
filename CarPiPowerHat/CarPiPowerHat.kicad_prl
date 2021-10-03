@@ -64,7 +64,7 @@
       36
     ],
     "visible_layers": "ffd5c7c_fffffff9",
-    "zone_display_mode": 0
+    "zone_display_mode": 1
   },
   "meta": {
     "filename": "CarPiPowerHat.kicad_prl",

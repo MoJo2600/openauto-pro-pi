@@ -3025,7 +3025,7 @@
     (property "Arrow Price/Stock" "" (id 11) (at 95.25 176.53 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
-    (property "LCSC" "C308587Copy" (id 12) (at 73.66 156.21 0)
+    (property "LCSC" "C308587" (id 12) (at 73.66 156.21 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid ae25b7d5-62bb-4c75-8474-21060988d268))
