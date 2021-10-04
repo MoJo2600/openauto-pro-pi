@@ -820,6 +820,7 @@
     )
   )
 
+
   (junction (at 51.435 58.42) (diameter 0.9144) (color 0 0 0 0))
   (junction (at 51.435 86.36) (diameter 1.016) (color 0 0 0 0))
   (junction (at 64.135 58.42) (diameter 0.9144) (color 0 0 0 0))
@@ -842,6 +843,8 @@
   (junction (at 150.495 63.5) (diameter 0.9144) (color 0 0 0 0))
   (junction (at 150.495 83.82) (diameter 0.9144) (color 0 0 0 0))
   (junction (at 167.005 127.635) (diameter 0.9144) (color 0 0 0 0))
+
+  (no_connect (at 202.565 60.96) (uuid 23d72004-63cd-4534-80db-318befc5b100))
 
   (wire (pts (xy 46.355 58.42) (xy 46.355 60.96))
     (stroke (width 0) (type solid) (color 0 0 0 0))

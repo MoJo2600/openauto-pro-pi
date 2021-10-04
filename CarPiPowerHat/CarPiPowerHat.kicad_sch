@@ -1034,7 +1034,7 @@
     (uuid 9cbbd2f9-4f34-4463-9a32-909d576e26a4)
     (property "Reference" "J2" (id 0) (at 45.847 186.69 0))
     (property "Value" "Conn_01x04" (id 1) (at 45.847 189.23 0))
-    (property "Footprint" "Connector_PinHeader_1.00mm:PinHeader_1x04_P1.00mm_Vertical" (id 2) (at 43.815 196.85 0)
+    (property "Footprint" "Connector_PinHeader_2.00mm:PinHeader_1x04_P2.00mm_Vertical" (id 2) (at 43.815 196.85 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 43.815 196.85 0)
@@ -1721,7 +1721,7 @@
       (reference "C36") (unit 1) (value "0.01uF") (footprint "Capacitor_SMD:C_0603_1608Metric")
     )
     (path "/d7dab0b1-a885-42c4-b558-97d79e73318c/d7f1481a-aaa9-45ad-b805-e8818d9de408"
-      (reference "C38") (unit 1) (value "100uF") (footprint "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder")
+      (reference "C38") (unit 1) (value "100uF") (footprint "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
     )
     (path "/d7dab0b1-a885-42c4-b558-97d79e73318c/6a588fdd-0512-4cb7-88bc-a8880f02101d"
       (reference "C39") (unit 1) (value "1uF") (footprint "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder")
@@ -1751,10 +1751,10 @@
       (reference "D8") (unit 1) (value "SMBJ33A") (footprint "Diode_SMD:D_SMB")
     )
     (path "/c779e344-5031-4f2d-bf31-77741b3c4be9/9fef9f7d-ce53-455a-b81f-ed54ca115295"
-      (reference "D9") (unit 1) (value "LED Green") (footprint "LED_SMD:LED_0603_1608Metric")
+      (reference "D9") (unit 1) (value "LED Blue") (footprint "LED_SMD:LED_0603_1608Metric")
     )
     (path "/c779e344-5031-4f2d-bf31-77741b3c4be9/4b70c4e6-76ec-4cce-ba57-391430d49c52"
-      (reference "D10") (unit 1) (value "LED Red") (footprint "LED_SMD:LED_0603_1608Metric")
+      (reference "D10") (unit 1) (value "LED Green") (footprint "LED_SMD:LED_0603_1608Metric")
     )
     (path "/c779e344-5031-4f2d-bf31-77741b3c4be9/bf96bf44-e2de-4690-a691-c8b28c5fe37d"
       (reference "F1") (unit 1) (value "Fuse") (footprint "Fuse:Fuse_1206_3216Metric_Pad1.42x1.75mm_HandSolder")
@@ -1790,10 +1790,10 @@
       (reference "IC2") (unit 1) (value "BD2226G-TR") (footprint "SamacSys_Parts:SOT95P280X125-5N")
     )
     (path "/696a3b6b-1b33-4b36-bded-7b3fb05e770a/fdabd193-05b7-418b-b423-c7f9635f8ada"
-      (reference "J1") (unit 1) (value "1-84953-5") (footprint "project_footprints:1849535")
+      (reference "J1") (unit 1) (value "1-84953-5") (footprint "SamacSys_Parts:1849535")
     )
     (path "/9cbbd2f9-4f34-4463-9a32-909d576e26a4"
-      (reference "J2") (unit 1) (value "Conn_01x04") (footprint "Connector_PinHeader_1.00mm:PinHeader_1x04_P1.00mm_Vertical")
+      (reference "J2") (unit 1) (value "Conn_01x04") (footprint "Connector_PinHeader_2.00mm:PinHeader_1x04_P2.00mm_Vertical")
     )
     (path "/1fcb31a2-51e4-4be3-8124-9d26e186cfb4/d6f246fc-9543-4b53-9a27-bdd4011ecf10"
       (reference "J3") (unit 1) (value "HDMI_A_1.4") (footprint "project_footprints:EDAC 690-019-298-412")
@@ -1817,7 +1817,7 @@
       (reference "J9") (unit 1) (value "40HAT") (footprint "Connector_PinSocket_2.54mm:PinSocket_2x20_P2.54mm_Vertical")
     )
     (path "/1fcb31a2-51e4-4be3-8124-9d26e186cfb4/fdabd193-05b7-418b-b423-c7f9635f8ada"
-      (reference "J10") (unit 1) (value "1-84953-5") (footprint "project_footprints:1849535")
+      (reference "J10") (unit 1) (value "1-84953-5") (footprint "SamacSys_Parts:1849535")
     )
     (path "/c779e344-5031-4f2d-bf31-77741b3c4be9/6bc05e1a-95ef-48ed-abfb-e1f927b61969"
       (reference "J11") (unit 1) (value "Conn_01x06_Male") (footprint "Connector_PinHeader_2.54mm:PinHeader_2x03_P2.54mm_Vertical")
@@ -1886,13 +1886,13 @@
       (reference "R19") (unit 1) (value "10K 1%") (footprint "Resistor_SMD:R_0603_1608Metric")
     )
     (path "/24bd5701-0eb0-4ec6-b68f-934ea2fa56bc/458d42de-4555-4a2d-af89-71f8f7dc5438"
-      (reference "R20") (unit 1) (value "10k") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
+      (reference "R20") (unit 1) (value "10k") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
     )
     (path "/c779e344-5031-4f2d-bf31-77741b3c4be9/4cf52119-fb49-4b3c-a2aa-682a95187367"
       (reference "R21") (unit 1) (value "10K 1%") (footprint "Resistor_SMD:R_0603_1608Metric")
     )
     (path "/c96310d5-5754-4cd6-8de7-7840ff32f085/458d42de-4555-4a2d-af89-71f8f7dc5438"
-      (reference "R22") (unit 1) (value "10k") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
+      (reference "R22") (unit 1) (value "10k") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
     )
     (path "/c779e344-5031-4f2d-bf31-77741b3c4be9/e887517c-961e-44c6-992b-959f9f108523"
       (reference "R23") (unit 1) (value "200 1%") (footprint "Resistor_SMD:R_0402_1005Metric")
@@ -1910,10 +1910,10 @@
       (reference "R27") (unit 1) (value "100") (footprint "Resistor_SMD:R_0603_1608Metric")
     )
     (path "/24bd5701-0eb0-4ec6-b68f-934ea2fa56bc/b1042786-9ebd-475f-a27d-633d437acdad"
-      (reference "R28") (unit 1) (value "1M") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
+      (reference "R28") (unit 1) (value "1M") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
     )
     (path "/c96310d5-5754-4cd6-8de7-7840ff32f085/b1042786-9ebd-475f-a27d-633d437acdad"
-      (reference "R29") (unit 1) (value "1M") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
+      (reference "R29") (unit 1) (value "1M") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
     )
     (path "/d7dab0b1-a885-42c4-b558-97d79e73318c/1214ef73-e2b5-465e-9b9d-b232033a9171"
       (reference "TP1") (unit 1) (value "TestPoint") (footprint "TestPoint:TestPoint_Pad_D1.0mm")
