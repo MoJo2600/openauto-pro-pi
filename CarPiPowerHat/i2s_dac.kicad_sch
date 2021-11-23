@@ -820,7 +820,6 @@
     )
   )
 
-
   (junction (at 51.435 58.42) (diameter 0.9144) (color 0 0 0 0))
   (junction (at 51.435 86.36) (diameter 1.016) (color 0 0 0 0))
   (junction (at 64.135 58.42) (diameter 0.9144) (color 0 0 0 0))

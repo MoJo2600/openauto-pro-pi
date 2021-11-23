@@ -656,7 +656,6 @@
     )
   )
 
-
   (junction (at 55.245 43.815) (diameter 1.016) (color 0 0 0 0))
   (junction (at 69.215 57.785) (diameter 1.016) (color 0 0 0 0))
   (junction (at 80.645 43.815) (diameter 1.016) (color 0 0 0 0))
