@@ -6,7 +6,7 @@ This hat is designed to work together with OpenAuto Pro and deliver some functio
 
 ## Work in progress - a word of warning
 
-I'm not an electronics professional and this board is currently work in progress. If somebody is willing to do a indepth review with me I would be very glad. Reach out to me at `mail@mojo2k.de` or twitter @MoJo2600.
+I'm not an electronics professional and this board is currently work in progress. If somebody is willing to do a indepth review with me I would be very glad. Reach out to me on twitter [@MoJo2600](https://twitter.com/MoJo2600).
 
 ## Features
 
@@ -18,14 +18,23 @@ I'm not an electronics professional and this board is currently work in progress
 * RTC clock
 * CSI to HDMI adapters to connect a display and camera
   * I2C bus availabe on the display connector for a light sensor
-* Designed to fit exactly onto a [Geekworm x825](https://wiki.geekworm.com/index.php/X825) SSD V1 (Not tested with V2)
+* Designed to fit exactly onto a [Geekworm x825](https://wiki.geekworm.com/index.php/X825) SSD V1 (Not tested with V2 but should fit)
 
-## ToDo
+## Connections
+the following pins are used on the pi.
 
-- [ ] ESD protection for inputs
-- [ ] EMI
-- [ ] Fuses
-- [ ] Add 3D models for case and display to repo
+|Connection     | Pin |
+|---------------|-----|
+|I2C            |BCM23|
+|I2C            |BCM24|
+|REVERSE        |BCM8 |
+|LIGHT          |BCM25|
+|PI UP          |BCM23|
+|SHUTDOWN       |BCM24|
+|I2S DAC MUTE   |BCM16|
+|I2S DAC BITCLK |BCM18|
+|I2S DAC LRCLK  |BCM19|
+|I2S DAC DATAIN |BCM21|
 
 ## History
 
