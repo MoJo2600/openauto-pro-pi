@@ -36,6 +36,57 @@ the following pins are used on the pi.
 |I2S DAC LRCLK  |BCM19|
 |I2S DAC DATAIN |BCM21|
 
+## OpenAuto Pro Setup
+
+### I2C Real Time Clock
+
+Make sure the battery has contact to the pad on the minus size. Mine had not and I added a little bit of solder to the pad to make contact.
+
+```
+# select pcf85063
+```
+
+### Audio output
+
+Add the overlays to `/boot/config.txt`
+
+```
+dtoverlay=hifiberry-dac
+dtoverlay=i2s-mmap
+```
+
+After a reboot the sound should be working. Expect a line level output. If the volume is set to high, there will be clipping.
+
+### Start / Stop script
+
+Copy `scripts/startstop.sh` to the openauto device.
+
+`sudo bash startstop.sh`
+
+### Rearview camera script
+
+### Lightsensor
+
+
+
+### Bluetooth
+
+I had to install the bluetooth firmware for my broadcom bluetooth dongle from this repository https://github.com/winterheart/broadcom-bt-firmware.
+
+The error in dmesg was:
+
+```
+bluetooth hci1: Direct firmware load for brcm/BCM20702A1-0a5c-21e8 failed with error -2
+Bluetooth: hci1: BCM: Patch brcm/BCM20702A1-0a5c-21e8 not found
+```
+
+The installation was easy:
+
+```
+wget https://github.com/winterheart/broadcom-bt-firmware/raw/master/brcm/BCM20702A1-0a5c-21e8.hcd
+sudo cp *.hcd /lib/firmware/brcm/
+```
+
 ## History
 
 Here is a picture of prototype V1 with a Mouseberry power supply.

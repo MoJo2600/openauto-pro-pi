@@ -1,0 +1,10 @@
+[Unit]
+Description=RearCamera
+DefaultDependencies=no
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /opt/rearcamera/rearcamera.py
+
+[Install]
+WantedBy=sysinit.target

@@ -1,0 +1,10 @@
+[Unit]
+Description=Brightness
+DefaultDependencies=no
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /opt/brightness/brightness.py
+
+[Install]
+WantedBy=sysinit.target
