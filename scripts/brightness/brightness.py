@@ -35,7 +35,7 @@ def read_sensor():
     logger.debug("Lux average: %d", lux_reading)
 
     reading_count = reading_count + 1
-    if reading_count > 10:
+    if reading_count > 5:
         logger.info("Measured reading: %d", lux_reading)
         reading_count = 0
     return lux_reading
@@ -52,30 +52,35 @@ def set_brightness(lux_reading):
     elif lux_reading in range(100, 200):
         target_brightness = 210                                 # 4/5 brightness level
     elif lux_reading > 200:
-        target_brightness = 255                                 # 5/5 brightness level
+        target_brightness = 254                                 # 5/5 brightness level
 
     # Read current brightness from memory
     with open("/sys/class/backlight/rpi_backlight/brightness", "r") as x:
-        currbrightness = int(x.read())
+        current_brightness = int(x.read())
+    logger.debug("Current brightness from file %d", current_brightness)
 
-    if target_brightness != currbrightness:
-        logger.info("Brightness switch: current brightness %d, target brightness %d", currbrightness, target_brightness)
+    # Sometimes it is not possible to set the value and this scripts tries indefinately
+    if target_brightness < (current_brightness - 1) or target_brightness > (current_brightness + 1):
+        logger.info("Brightness switch: current brightness %d, target brightness %d", current_brightness, target_brightness)
+    else:
+        logger.debug("No change in brightness")
+        return
 
     # Gradually adjust the brightness
-    if currbrightness >= target_brightness:                     # Set adaptation step (decreasing / increasing)
+    if current_brightness > target_brightness:                     # Set adaptation step (decreasing / increasing)
         step = -1
     else:
         step = 1
 
-    for brightness in range(currbrightness, target_brightness, step):
+    for brightness in range(current_brightness, target_brightness, step):
         logger.debug("Setting brightness %d", brightness)
-        with open("/sys/class/backlight/rpi_backlight/brightness", "w") as f:
-            f.write(str(brightness+1))
-            time.sleep(0.02)                            # transition speed
+        with open("/sys/class/backlight/rpi_backlight/brightness", "w") as file:
+            file.write(str(brightness))
+        time.sleep(0.02)                            # transition speed
 
 def set_day_night_mode(lux_reading):
     night_lux_value = 20
-    threshold = 80                                       # day/night threshold
+    threshold = 25                                       # day/night threshold
 
     current_state = GPIO.input(GPIO_PIN) 
     # Setting up GPIO
