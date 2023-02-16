@@ -1,10 +1,16 @@
 [Unit]
 Description=Brightness
 DefaultDependencies=no
+StartLimitBurst=3
+StartLimitIntervalSec=60
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/python3 /opt/brightness/brightness.py
+Environment=PYTHONUNBUFFERED=1
+WorkingDirectory=/opt/brightness
+ExecStart=/opt/brightness/venv/bin/python3 /opt/brightness/brightness.py
+Restart=always
+RestartSec=5
 
 [Install]
 WantedBy=sysinit.target
