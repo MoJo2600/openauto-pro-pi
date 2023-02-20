@@ -1,2 +1,3 @@
 tsl2561
 RPi.GPIO==0.7.1
+PyYAML

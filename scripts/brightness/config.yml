@@ -1,0 +1,7 @@
+night_mode_gpio_pin: 27
+lux_sample_count: 5
+night_mode_on_lux: 20
+night_mode_off_lux: 100
+maximum_lux_breakpoint: 1254
+brightness_level_min: 60
+brightness_level_max: 254

@@ -1,11 +1,25 @@
+"""
+Backlight Control Script With TSL2561 Light Sensor
+
+This script implements a recommendation from analog devices
+https://www.analog.com/en/design-notes/a-simple-implementation-of-lcd-brightness-control-using-the-max44009-ambientlight-sensor.html
+"""
+
+import math
 import time
-# import smbus
+import multiprocessing
 import sys
+import signal
 import RPi.GPIO as GPIO
-from multiprocessing import Process
 import logging
 import argparse
-from tsl2561 import TSL2561
+from tsl2561 import *
+from statistics import mean
+from yaml import load
+try:
+    from yaml import CLoader as Loader
+except ImportError:
+    from yaml import Loader
 
 formatter = logging.Formatter(fmt="%(asctime)s %(levelname)s: %(message)s", datefmt="%Y.%m.%d %H:%M:%S")
 logger = logging.getLogger(__name__)
@@ -13,91 +27,180 @@ handler = logging.StreamHandler(stream=sys.stdout)
 handler.setFormatter(formatter)
 logger.addHandler(handler)
 
-GPIO_PIN = 27
-TSL_SENSOR = None
+# Configuration
+with open("config.yml", "r") as ymlfile:
+    cfg = load(ymlfile, Loader=Loader)
 
-LUX_LEVEL_1 = 5
-BRIGHTNESS_LEVEL_1 = 60
+NIGHT_MODE_GPIO_PIN = cfg["night_mode_gpio_pin"]
+LUX_SAMPLE_COUNT = cfg["lux_sample_count"]
+NIGHT_MODE_ON_LUX = cfg["night_mode_on_lux"]
+NIGHT_MODE_OFF_LUX = cfg["night_mode_off_lux"]
+MAXIMUM_LUX_BREAKPOINT = cfg["maximum_lux_breakpoint"]
+BRIGHTNESS_LEVEL_MIN = cfg["brightness_level_min"]
+BRIGHTNESS_LEVEL_MAX = cfg["brightness_level_max"]
 
-LUX_LEVEL_2 = 20
-BRIGHTNESS_LEVEL_2 = 140
+# private
+current_lux = 1
+current_brightness_percent = 0.5
+desired_brightness_percent = 0.5
+running = True
+step_size = 0.01
 
-LUX_LEVEL_3 = 100
-BRIGHTNESS_LEVEL_3 = 180
+def map_range(x, in_min, in_max, out_min, out_max):
+    """Maps an value to a target range
 
-LUX_LEVEL_4 = 200
-BRIGHTNESS_LEVEL_4 = 210
+    Args:
+        x (_type_): The value to map
+        in_min (_type_): Input minimum
+        in_max (_type_): Input maximum
+        out_min (_type_): Output minimum
+        out_max (_type_): Output maximum
 
-# > LUX_LEVEL_4
-BRIGHTNESS_LEVEL_MAX = 254
+    Returns:
+        _type_: The mapped value
+    """
+    return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min
 
-TRANSISTION_SPEED = 0.02
+def get_brightness_percent_from_lux_reading(lux) -> float:
+    """calculate screen brightness in percent for given lux
 
-NIGHT_MODE_ON_LUX = 20
-NIGHT_MODE_OFF_LUX = 100
+    Args:
+        lux (int): The current light reading in lux
 
-def read_sensor():
-    lux = TSL_SENSOR.lux()
-    logger.debug(f"lux reading: {lux}")
-    return lux
-
-
-def set_brightness(lux_reading):
-    # Read current brightness from memory
-    with open("/sys/class/backlight/rpi_backlight/brightness", "r") as x:
-        current_brightness = int(x.read())
-
-    # Calculate target screen brightness value
-    target_brightness = BRIGHTNESS_LEVEL_1                                        # Default value
-    level = 0
-
-    if lux_reading in range(0, LUX_LEVEL_1):
-        target_brightness = BRIGHTNESS_LEVEL_1
-        level = 1
-    elif lux_reading in range(LUX_LEVEL_1+1, LUX_LEVEL_2):
-        target_brightness = BRIGHTNESS_LEVEL_2
-        level = 2
-    elif lux_reading in range(LUX_LEVEL_2+1, LUX_LEVEL_3):
-        target_brightness = BRIGHTNESS_LEVEL_3
-        level = 3
-    elif lux_reading in range(LUX_LEVEL_3+1, LUX_LEVEL_4):
-        target_brightness = BRIGHTNESS_LEVEL_4
-        level = 4
-    elif lux_reading > LUX_LEVEL_4:
-        target_brightness = BRIGHTNESS_LEVEL_MAX
-        level = 5
-    
-    logger.debug("Current brightness: %d, Target brightness: %d", current_brightness, target_brightness)
-
-    if (target_brightness != current_brightness):
-        logger.info("Changing brightness to level %s/5 (lux: %d, current: %d, target brightness: %d)", level, lux_reading, current_brightness, target_brightness)
-
-        direction = -1 if current_brightness > target_brightness else 1
-        with open("/sys/class/backlight/rpi_backlight/brightness", "w") as f:
-            for brightness in range(current_brightness, target_brightness+direction, direction):
-                logger.debug("Setting brightness %d", brightness)
-                f.write(str(brightness))
-                f.flush()
-                time.sleep(TRANSISTION_SPEED)
-
+    Returns:
+        float: The brightness in percent based on a function
+    """
+    if (lux > MAXIMUM_LUX_BREAKPOINT):
+        return 1.0
     else:
-        logger.debug("No change")
+        return (9.9323 * math.log(lux) + 27.059) / 100.0;
 
+def process_read_sensor() -> None:
+    """
+    Reads the sensor and calculates the average of the last readings
+    """
+    global current_lux, running
 
-def set_day_night_mode(lux_reading):
-    GPIO.setup(GPIO_PIN, GPIO.IN)
-    current_state = GPIO.input(GPIO_PIN) 
-    logger.debug("Nightmode - current %d, lux_reading %d", current_state, lux_reading)
+    logger.info('Connecting to sensor...')
+    try:
+        tsl_sensor = TSL2561(autogain=True) # integration_time=TSL2561_INTEGRATIONTIME_101MS,
+        logger.info('successfull')
+    except:
+        logger.exception('Could not connect to sensor!')
+        exit(2)
 
-    GPIO.setup(GPIO_PIN, GPIO.OUT)
+    lux_readings = []
+
+    while running:
+        try:
+            # Reading the value does a time.sleep
+            lux = tsl_sensor.lux()
+
+            lux_readings.append(lux)
+            if len(lux_readings) > LUX_SAMPLE_COUNT:
+                lux_readings.pop(0)
+
+            current_lux = abs(mean(lux_readings))
+            logger.info(f"lux reading: {lux}, avg: {current_lux}")        
+            time.sleep(0.5)
+        except KeyboardInterrupt:
+            break
+
+def step_brightness() -> None:
+    """Steps the brightness from current value to desired value
+    """
+    global current_brightness_percent, desired_brightness_percent, step_size
+
+    if current_brightness_percent == desired_brightness_percent:
+        return
+    
+    if current_brightness_percent > desired_brightness_percent:
+        if (current_brightness_percent-step_size) < desired_brightness_percent:
+            current_brightness_percent = desired_brightness_percent
+        else:
+            current_brightness_percent = current_brightness_percent - step_size
+    elif current_brightness_percent < desired_brightness_percent:
+        if (current_brightness_percent+step_size) > desired_brightness_percent:
+            current_brightness_percent = desired_brightness_percent
+        else:
+            current_brightness_percent = current_brightness_percent + step_size
+
+    set_brightness(current_brightness_percent)
+
+def set_brightness(brightness_in_percent) -> None:
+    """Sets the display brightness
+    Calculates the correct value from percent value
+    Args:
+        brightness_in_percent (float): Brightness in percent
+    """
+    brightness = int(map_range(brightness_in_percent, 0.0, 1.0, BRIGHTNESS_LEVEL_MIN, BRIGHTNESS_LEVEL_MAX))
+    try:
+        with open("/sys/class/backlight/rpi_backlight/brightness", "w") as f:
+            f.write(str(brightness))
+            f.flush()
+    except Exception:
+        logger.exception('Could not set brightness')
+
+def set_day_night_mode(lux):
+    """Sets the day/night mode via GPIO port
+
+    Args:
+        lux (int): Current light reading in lux
+    """
+    GPIO.setup(NIGHT_MODE_GPIO_PIN, GPIO.IN)
+    current_state = GPIO.input(NIGHT_MODE_GPIO_PIN) 
+
+    GPIO.setup(NIGHT_MODE_GPIO_PIN, GPIO.OUT)
     # Setting up GPIO
-    if lux_reading < NIGHT_MODE_ON_LUX and current_state == False:
-        GPIO.output(GPIO_PIN, True)                       # set "Night mode"
+    if lux < NIGHT_MODE_ON_LUX and current_state == False:
+        GPIO.output(NIGHT_MODE_GPIO_PIN, True)                       # set "Night mode"
         logger.info("Setting night mode")
-    if lux_reading > NIGHT_MODE_OFF_LUX and current_state:
-        GPIO.output(GPIO_PIN, False)                       # set "Night mode" false
+    if lux > NIGHT_MODE_OFF_LUX and current_state:
+        GPIO.output(NIGHT_MODE_GPIO_PIN, False)                       # set "Night mode" false
         logger.info("Setting day mode")
 
+
+def start():
+    """Start the programm
+    """
+    global running, current_brightness_percent, step_size, desired_brightness_percent
+
+    running = True
+    read_sensor = multiprocessing.Process(target=process_read_sensor)
+    read_sensor.start()
+
+    light_reading_counter = 0
+    step_size = 0.01
+
+    try:
+        while running:
+            start = time.time()
+            step_brightness()
+            set_day_night_mode(current_lux)
+            if (light_reading_counter):
+                light_reading_counter = light_reading_counter -1
+            else:
+                light_reading_counter = 20                          # 2 seconds delay
+                desired_brightness_percent = get_brightness_percent_from_lux_reading(current_lux)
+                logger.debug("Desired brightness in percent %f", desired_brightness_percent)
+                difference = abs(desired_brightness_percent - current_brightness_percent)
+                step_size = 0.01 if (difference <= 0.01) else difference / 10.0
+
+            end = time.time()
+            elapsed_time = end - start
+            time.sleep(0.1 - elapsed_time)
+    except KeyboardInterrupt:
+        logger.info("Caught keyboard interrupt, canceling all tasks.")
+        running = False
+        read_sensor.join()
+        read_sensor.terminate()
+        exit
+    except Exception as ex:
+        logger.exception('Something went wrong')
+        exit(1)
+    finally:
+        GPIO.cleanup()
+        logger.info("Successfully shutdown brightness service.")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -113,34 +216,13 @@ if __name__ == "__main__":
         raise ValueError('Invalid log level: %s' % args.log)
     logger.setLevel(numeric_level)
 
-    logger.info('Connecting to sensor...')
-    try:
-        TSL_SENSOR = TSL2561(debug=True)
-        logger.info('successfull')
-    except:
-        logger.exception('Could not connect to sensor!')
-        exit(2)
+    # GPIO is in use by openauto so ignore warning about current use
+    GPIO.setwarnings(False)
 
     GPIO.setmode(GPIO.BCM)
-    GPIO.setup(GPIO_PIN, GPIO.OUT)
+    GPIO.setup(NIGHT_MODE_GPIO_PIN, GPIO.OUT)
 
-    day_night_mode = GPIO.input(GPIO_PIN)
-    logger.info("day night mode: %d", day_night_mode)
+    day_night_mode = GPIO.input(NIGHT_MODE_GPIO_PIN)
+    logger.info("Nightmode: %d", day_night_mode)
 
-    try:
-        while True:
-            lux = read_sensor()
-            p1 = Process(target=set_brightness, args=(lux,))
-            p1.start()
-            p2 = Process(target=set_day_night_mode, args=(lux,))
-            p2.start()
-            p1.join()
-            p2.join()
-            time.sleep(2)
-    except KeyboardInterrupt:
-        exit
-    except Exception as ex:
-        logger.error(ex)
-        exit(1)
-    finally:
-        GPIO.cleanup()
+    start()
