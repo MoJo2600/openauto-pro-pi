@@ -7,7 +7,7 @@ https://www.analog.com/en/design-notes/a-simple-implementation-of-lcd-brightness
 
 import math
 import time
-import multiprocessing
+from multiprocessing import Process, Value
 import sys
 import signal
 import RPi.GPIO as GPIO
@@ -40,7 +40,7 @@ BRIGHTNESS_LEVEL_MIN = cfg["brightness_level_min"]
 BRIGHTNESS_LEVEL_MAX = cfg["brightness_level_max"]
 
 # private
-current_lux = 1
+current_lux = Value('i', 1)
 current_brightness_percent = 0.5
 desired_brightness_percent = 0.5
 running = True
@@ -70,24 +70,18 @@ def get_brightness_percent_from_lux_reading(lux) -> float:
     Returns:
         float: The brightness in percent based on a function
     """
-    if (lux > MAXIMUM_LUX_BREAKPOINT):
+    if lux > MAXIMUM_LUX_BREAKPOINT:
         return 1.0
+    if lux == 0:
+        return 0
     else:
         return (9.9323 * math.log(lux) + 27.059) / 100.0;
 
-def process_read_sensor() -> None:
+def process_read_sensor(tsl_sensor, curr) -> None:
     """
     Reads the sensor and calculates the average of the last readings
     """
-    global current_lux, running
-
-    logger.info('Connecting to sensor...')
-    try:
-        tsl_sensor = TSL2561(autogain=True) # integration_time=TSL2561_INTEGRATIONTIME_101MS,
-        logger.info('successfull')
-    except:
-        logger.exception('Could not connect to sensor!')
-        exit(2)
+    global running
 
     lux_readings = []
 
@@ -100,8 +94,8 @@ def process_read_sensor() -> None:
             if len(lux_readings) > LUX_SAMPLE_COUNT:
                 lux_readings.pop(0)
 
-            current_lux = abs(mean(lux_readings))
-            logger.info(f"lux reading: {lux}, avg: {current_lux}")        
+            curr.value = int(mean(lux_readings))
+            logger.info(f"lux reading: {lux}, avg: {curr.value}")
             time.sleep(0.5)
         except KeyboardInterrupt:
             break
@@ -134,10 +128,14 @@ def set_brightness(brightness_in_percent) -> None:
         brightness_in_percent (float): Brightness in percent
     """
     brightness = int(map_range(brightness_in_percent, 0.0, 1.0, BRIGHTNESS_LEVEL_MIN, BRIGHTNESS_LEVEL_MAX))
+    logger.debug("brightness in percent: %s, brightness to set: %s", brightness_in_percent, brightness)
     try:
         with open("/sys/class/backlight/rpi_backlight/brightness", "w") as f:
             f.write(str(brightness))
             f.flush()
+    except OSError as e:
+        print(f"Unable to open brightness file: {e}", file=sys.stderr)
+        return
     except Exception:
         logger.exception('Could not set brightness')
 
@@ -161,31 +159,44 @@ def set_day_night_mode(lux):
 
 
 def start():
-    """Start the programm
+    """Start the script
     """
-    global running, current_brightness_percent, step_size, desired_brightness_percent
+    global running, current_lux, current_brightness_percent, step_size, desired_brightness_percent
+
+    current_lux = Value('i', 1)
+
+    logger.info('Connecting to sensor...')
+    try:
+        tsl_sensor = TSL2561(autogain=False) # integration_time=TSL2561_INTEGRATIONTIME_101MS,
+        logger.info('successfull')
+    except:
+        logger.exception('Could not connect to sensor!')
+        running = False
+        exit(1)
 
     running = True
-    read_sensor = multiprocessing.Process(target=process_read_sensor)
+
+    read_sensor = Process(target=process_read_sensor, args=(tsl_sensor, current_lux,))
     read_sensor.start()
 
     light_reading_counter = 0
-    step_size = 0.01
 
     try:
         while running:
             start = time.time()
             step_brightness()
-            set_day_night_mode(current_lux)
+            set_day_night_mode(current_lux.value)
             if (light_reading_counter):
                 light_reading_counter = light_reading_counter -1
             else:
+                logger.debug("Current Lux %s", current_lux.value)
                 light_reading_counter = 20                          # 2 seconds delay
-                desired_brightness_percent = get_brightness_percent_from_lux_reading(current_lux)
+                desired_brightness_percent = get_brightness_percent_from_lux_reading(current_lux.value)
                 logger.debug("Desired brightness in percent %f", desired_brightness_percent)
                 difference = abs(desired_brightness_percent - current_brightness_percent)
                 step_size = 0.01 if (difference <= 0.01) else difference / 10.0
 
+            # Adjust loop time to 100ms seconds for smooth transitions
             end = time.time()
             elapsed_time = end - start
             time.sleep(0.1 - elapsed_time)
@@ -194,15 +205,29 @@ def start():
         running = False
         read_sensor.join()
         read_sensor.terminate()
-        exit
     except Exception as ex:
         logger.exception('Something went wrong')
         exit(1)
     finally:
         GPIO.cleanup()
         logger.info("Successfully shutdown brightness service.")
+        exit
+
+def stop():
+    """Stop the script"""
+    global running
+    logger.info("Stopping brightness service")
+    running = False
+    GPIO.cleanup()
+    sys.exit(0)
+
+def _handle_sigterm(sig, frame):
+    logger.warning('SIGTERM received...')
+    stop()
 
 if __name__ == "__main__":
+    signal.signal(signal.SIGTERM, _handle_sigterm)
+
     parser = argparse.ArgumentParser()
     parser.add_argument("-l", "--log", nargs='?', const='DEBUG', help='log level (DEBUG, INFO, WARN, ERROR)')
     args = parser.parse_args()

@@ -1,7 +1,20 @@
+# GPIO pin to signal day / night mode to openauto pro
 night_mode_gpio_pin: 27
+
+# Number of samples to average to smoothen drastic changes in brightness
 lux_sample_count: 5
+
+# Lower threshold to switch from day mode to night mode
 night_mode_on_lux: 20
-night_mode_off_lux: 100
+
+# Upper threshold to switch from night mode to day mode
+night_mode_off_lux: 80
+
+# Maximum Lux breakpoint Everything above will be maximum brightness
 maximum_lux_breakpoint: 1254
-brightness_level_min: 60
+
+# Minimum brightness level to set
+brightness_level_min: 40
+
+# Maximum brightness level to set
 brightness_level_max: 254

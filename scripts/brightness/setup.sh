@@ -2,6 +2,7 @@
 set -e
 set -x
 
+rm -rf venv/
 sudo mkdir -p /opt/brightness
 sudo cp -Rfv . /opt/brightness
 cd /opt/brightness
