@@ -38,6 +38,14 @@ the following pins are used on the pi.
 
 ## OpenAuto Pro Setup
 
+Set up the device before you add the header to the raspberry pi. The device will constantly reboot if the Start / Stop script is not installed. An alternative is to bridge the 3.3V pin from the raspberry pi to BCM23.
+
+### Start / Stop script
+
+Copy `scripts/startstop.sh` to the openauto device.
+
+`sudo bash startstop.sh`
+
 ### I2C Real Time Clock
 
 Make sure the battery has contact to the pad on the minus size. Mine had not and I added a little bit of solder to the pad to make contact.
@@ -46,7 +54,26 @@ Make sure the battery has contact to the pad on the minus size. Mine had not and
 # select pcf85063
 ```
 
+### Rearview camera script
+
+This script will open raspivid and show the picture of the rear camera.
+
+Copy all files to the raspberry pi and start the setup
+
+`./setup.sh`
+
+### Brightness control script
+
+My brightness script utilizes the TSL2561 ambient light sensor. The script implements a recommendation from analog devices
+https://www.analog.com/en/design-notes/a-simple-implementation-of-lcd-brightness-control-using-the-max44009-ambientlight-sensor.html
+
+Copy all files to the raspberry pi and start the setup
+
+`./setup.sh`
+
 ### Audio output
+
+The current audio circuit is not really usable. The output is very noisy und the signal is too low to usw it effectively. If you want to try i t you can use the following settings.
 
 Add the overlays to `/boot/config.txt`
 
@@ -57,19 +84,9 @@ dtoverlay=i2s-mmap
 
 After a reboot the sound should be working. Expect a line level output. If the volume is set to high, there will be clipping.
 
-### Start / Stop script
+## Fixes for Issues
 
-Copy `scripts/startstop.sh` to the openauto device.
-
-`sudo bash startstop.sh`
-
-### Rearview camera script
-
-### Lightsensor
-
-
-
-### Bluetooth
+### Bluetooth Dongle BCM20702A1 not working
 
 I had to install the bluetooth firmware for my broadcom bluetooth dongle from this repository https://github.com/winterheart/broadcom-bt-firmware.
 
