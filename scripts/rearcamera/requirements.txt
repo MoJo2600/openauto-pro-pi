@@ -1,1 +1,2 @@
 RPi.GPIO==0.7.1
+psutil==5.9.4

@@ -1,8 +1,6 @@
 [Unit]
 Description=Brightness
 DefaultDependencies=no
-StartLimitBurst=3
-StartLimitIntervalSec=60
 
 [Service]
 Type=simple

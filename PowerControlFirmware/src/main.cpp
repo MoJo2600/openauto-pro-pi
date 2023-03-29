@@ -13,7 +13,7 @@
 #define PULSE_DURATION_FAST 30
 #define PULSE_DURATION_SUPER_FAST 20
 #define WAITTIME_FOR_PI_TO_RESPOND 6000
-#define FINAL_WAIT_TIME 1000
+#define FINAL_WAIT_TIME 500
 
 enum State {
   WAIT_FOR_PI_BOOT,
@@ -130,7 +130,17 @@ void loop() {
       break;
     case KILL:
       digitalWrite(PIN_LED, 0);
-      digitalWrite(PIN_POWER_CNTRL, 0);
+      digitalWrite(PIN_POWER_CNTRL, 0);                                        // Shut down the power circuit
+
+      // Usually shutting down the power circuit will shut down the attiny as well and the program ends here
+      // It might happen, that the user restarts the engine during this time. If so, we want to
+      // enable the power circuitry again after a clean shutdown
+      delay(100);
+      if (g_ignitionOn == true) {
+        digitalWrite(PIN_POWER_CNTRL, 1);                                    // Enable the power circuit
+        digitalWrite(PIN_PI_OUT, 0);
+        switchState(WAIT_FOR_PI_BOOT);
+      }
 
       break;
   }
